@@ -3,8 +3,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <body>
-<jsp:include page="navbar.jsp" />
-<jsp:include page="Carousel.jsp" />
-<jsp:include page="Footer.html" />
+<%@ include file="/views/navbar.jsp" %>
+<%@ include file="/views/Carousel.jsp" %>
+<%@ include file="/views/Footer.html" %>
 </body>
 </html>
