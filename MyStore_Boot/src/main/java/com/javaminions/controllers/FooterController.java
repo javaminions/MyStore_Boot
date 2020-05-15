@@ -25,5 +25,25 @@ public class FooterController {
 	public String press() {
 		return "Press";
 	}
+	
+	@GetMapping("payments")
+	public String payments() {
+		return "Payments";
+	}
+	
+	@GetMapping("shipping")
+	public String shipping() {
+		return "Shipping";
+	}
+	
+	@GetMapping("return")
+	public String goToReturn() {
+		return "Return";
+	}
+	
+	@GetMapping("faq")
+	public String faq() {
+		return "FAQ";
+	}
 
 }
