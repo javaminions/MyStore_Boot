@@ -21,7 +21,7 @@
 			<div class="carousel-inner">
 
 				<div class="item active imgheight">
-					<a href="IndexHandler?caroSelection=carousel&amp;prodcode=8"><img src="images/ball.jpg"></a>
+					<a href="ball"><img src="images/ball.jpg"></a>
 					<div class="carousel-caption">
 						<p>Balls for any occasion! <br>
 						Soccer Ball - $79.99</p>
@@ -30,7 +30,7 @@
 				<!-- End Item -->
 
 				<div class="item imgheight">
-					<a href="IndexHandler?caroSelection=carousel&amp;prodcode=6"><img src="images/shoe.jpg"></a>
+					<a href="shoe"><img src="images/shoe.jpg"></a>
 					<div class="carousel-caption">
 						<p>Have the best shoes on the field! <br>
 						Running Shoes - $179.99</p>
@@ -39,7 +39,7 @@
 				<!-- End Item -->
 
 				<div class="item imgheight">
-					<a href="IndexHandler?caroSelection=carousel&amp;prodcode=7"><img src="images/visor.jpg"></a>
+					<a href="visor"><img src="images/visor.jpg"></a>
 					<div class="carousel-caption">
 						<p>Look the best while playing! <br>
 						Visor - $19.99</p>
@@ -48,7 +48,7 @@
 				<!-- End Item -->
 
 				<div class="item imgheight">
-					<a href="IndexHandler?caroSelection=carousel&amp;prodcode=1"><img 
+					<a href="vans"><img 
 					src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png"></a>
 					<div class="carousel-caption">
 						<p>Run Fast! <br>
@@ -58,7 +58,7 @@
 				<!-- End Item -->
 
 				<div class="item imgheight">
-					<a href="IndexHandler?caroSelection=carousel&amp;prodcode=3"><img src="images/fishing_pole.jpg"></a>
+					<a href="pole"><img src="images/fishing_pole.jpg"></a>
 					<div class="carousel-caption">
 						<p> Be outdoors (6ft away from others)! <br>
 						Fishing pole - $23.99</p>

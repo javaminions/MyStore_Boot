@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<%@ include file="/views/navbar.jsp" %>
 <br><br>
 	
 	<div class="back">
@@ -35,6 +36,6 @@
 
 	</div>
 
-
+<%@ include file="/views/Footer.html" %>
 </body>
 </html>

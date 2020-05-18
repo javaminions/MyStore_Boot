@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.javaminions.service.CarouselService;
 import com.javaminions.service.SignInService;
 
 @Controller
@@ -63,5 +64,32 @@ public class NavbarController {
 			public String orders() {
 		
 		return "Orders";
+	}
+	
+	@GetMapping("ball")
+	public String ball() {
+		
+		return "innerProduct";
+		
+	}
+	
+	@GetMapping("shoe")
+	public String shoe() {
+		return "innerProduct";
+	}
+	
+	@GetMapping("visor")
+	public String visor() {
+		return "innerProduct";
+	}
+	
+	@GetMapping("vans")
+	public String vans() {
+		return "innerProduct";
+	}
+	
+	@GetMapping("pole")
+	public String fishing_pole() {
+		return "innerProduct";
 	}
 }
