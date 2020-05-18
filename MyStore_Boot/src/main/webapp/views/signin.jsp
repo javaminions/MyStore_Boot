@@ -19,8 +19,7 @@
 <br><br><br>
 
 <div id="registration">
-<form action="IndexHandler" method="post" id="login">
-    <input required type="hidden" name="action" value="signin">        
+<form action="signInUser" method="post" id="login">       
     <label class="pad_top">Username:</label>
     <input required type="text" name="userName"><br><br>
      

@@ -14,12 +14,10 @@ import com.costco.model.UserProfile;
 
 public class SignInService {
 
-	public void signInUser (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, ClassNotFoundException {
+	public void signInUser (HttpServletRequest request, HttpServletResponse response, String userName, String password) throws ServletException, IOException, SQLException, ClassNotFoundException {
 		
 		System.out.println("sign in called");
 		
-		String userName = request.getParameter("userName");
-		String password = request.getParameter("password");
 		HttpSession session = request.getSession();
 		
 
@@ -66,7 +64,7 @@ public class SignInService {
 			lnc.setMaxAge(60 * 60 * 24 * 365 * 2);
 			response.addCookie(lnc);
 			
-			//request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("views/home.jsp").forward(request, response);
 			
 		} 
 	}

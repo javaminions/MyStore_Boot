@@ -19,8 +19,7 @@
 <br><br><br>
 
 <div id="registration">
-<form action="IndexHandler" method="post">
-    <input type="hidden" name="action" value="register" id="login">  
+<form action="registerUser" method="post">  
           
     <label class="pad_top">Email:</label>
     <input required type="email" name="email"><br><br>
