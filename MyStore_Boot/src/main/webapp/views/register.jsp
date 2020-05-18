@@ -10,7 +10,7 @@
  <script src="scripts/login.js" charset="utf-8"></script>
 </head>
 <body>
-<jsp:include page="navbar.jsp"/>
+<%@ include file="/views/navbar.jsp" %>
 <div class="registrationContainer">
 <h1>Don't have an account?</h1>
 <h2>Register with us!</h2>
@@ -43,13 +43,12 @@
 </div>
 <br>
 <p>All ready have an account?</p>
-<form action="IndexHandler" method="post">
-<input type="hidden" name="action" value="signinPage">
+<form action="signin" method="get">
 <input type="submit" value="Sign In" class="margin_left">
 </form>
 </div>
 
 
-<jsp:include page="Footer.html"/>
+<%@ include file="/views/Footer.html" %>
 </body>
 </html>

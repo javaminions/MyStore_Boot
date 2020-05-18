@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Sign-In</title>
-<link rel="stylesheet" href="/static/styles/register.css" type="text/css"/>
+<link rel="stylesheet" href="styles/register.css" type="text/css"/>
  <script src="/static/scripts/login.js" charset="utf-8"></script>
 </head>
 <body>
@@ -32,8 +32,7 @@
 </div>
 <br>
 <p>Don't have an account?</p>
-<form action="IndexHandler">
-<input type="hidden" name="action" value="registerPage">
+<form action="register" method="get">
 <input type="submit" value="Register" class="margin_left">
 </form>
 </div>

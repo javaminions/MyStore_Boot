@@ -22,23 +22,16 @@ public class NavbarController {
 	}
 
 	@GetMapping("signin")
-	public void signin(@RequestParam("action") String signin, HttpServletRequest request, HttpServletResponse response) {
+	public String signin() {
 		System.out.println("routing to sign in");
-		if (signin.equals("signinPage")) {
-			try {
-				System.out.println("action is equal to signin");
-				new SignInService().signInUser(request,response);
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			} catch (ServletException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
+	
+		return "signin";
+	}
+	
+	@GetMapping("register")
+	public String register() {
+		System.out.println("hit register method");
 		
-		//return "home"; 
+		return "register";
 	}
 }
