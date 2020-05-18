@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.costco.model.Product;
 
 public class CarouselService {
+	
+	
 	public void caroHandler(String caroHandler, HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

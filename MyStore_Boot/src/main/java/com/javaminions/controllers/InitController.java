@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.javaminions.service.CarouselService;
 import com.javaminions.service.InitPageService;
 
 @Controller
@@ -18,6 +19,12 @@ public class InitController {
 	public String goHome(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			new InitPageService().pageInitializer(request, response);
+			String caroSelection = request.getParameter("caroSelection");
+			System.out.println(caroSelection);
+			if(caroSelection!=null) {
+				new CarouselService().caroHandler(caroSelection, request, response);
+			
+			}
 		} catch (ServletException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
