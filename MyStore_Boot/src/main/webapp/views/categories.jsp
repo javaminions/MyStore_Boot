@@ -32,7 +32,7 @@ $(document).ready(function(){
 <body>
 
 	<div class="top">
-		<a href="index.jsp"><img alt="Costco Logo" src="https://javaminions.github.io/images/BossCo.png"
+		<a href="/"><img alt="Costco Logo" src="https://javaminions.github.io/images/BossCo.png"
 			style="width: 20%; height: auto;"></a>
 	</div>
 	
@@ -51,7 +51,7 @@ $(document).ready(function(){
 			
 				</div>
 				<div class="wrap">
-					<a href="CartServlet?action=showall" class="cart"><i class="fas fa-shopping-cart"></i><span class='badge badge-warning' id='lblCartCount'>${cartCount}</span></a>
+					<a href="Cart?action=showall" class="cart"><i class="fas fa-shopping-cart"></i><span class='badge badge-warning' id='lblCartCount'>${cartCount}</span></a>
 					</div>
 		</form>
 	</nav>
@@ -120,7 +120,7 @@ $(document).ready(function(){
 							<h5 class="mt-4">${product.getPriceCurrencyFormat()}</h5>
 						</div>
 		
-						<a href="CartServlet?action=addtocart&amp;prodcode=${product.code}" class="btn btn-danger mt-3 cartButton ${disableButton}"><i
+						<a href="Cart?action=addtocart&amp;prodcode=${product.code}" class="btn btn-danger mt-3 cartButton ${disableButton}"><i
 							class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
@@ -178,7 +178,7 @@ $(document).ready(function(){
 							<h5 class="mt-4">${product.getPriceCurrencyFormat()}</h5>
 						</div>
 		
-						<a href="CartServlet?action=addtocart&amp;prodcode=${product.code}" class="btn btn-danger mt-3 cartButton ${disableButton}"><i
+						<a href="Cart?action=addtocart&amp;prodcode=${product.code}" class="btn btn-danger mt-3 cartButton ${disableButton}"><i
 							class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>

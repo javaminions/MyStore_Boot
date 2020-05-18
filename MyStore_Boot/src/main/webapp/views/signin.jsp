@@ -6,11 +6,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Sign-In</title>
-<link rel="stylesheet" href="styles/register.css" type="text/css"/>
- <script src="scripts/login.js" charset="utf-8"></script>
+<link rel="stylesheet" href="/static/styles/register.css" type="text/css"/>
+ <script src="/static/scripts/login.js" charset="utf-8"></script>
 </head>
 <body>
-<jsp:include page="navbar.jsp"/>
+<%@ include file="/views/navbar.jsp" %>
 <div class="registrationContainer">
 <h1>Have an account already?</h1>
 <h2>Sign in below!</h2>
@@ -39,6 +39,6 @@
 </div>
 
 
-<jsp:include page="Footer.html"/>
+<%@ include file="/views/Footer.html" %>
 </body>
 </html>
