@@ -36,8 +36,5 @@ public class SignInController {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 	}
-	
-
 }
