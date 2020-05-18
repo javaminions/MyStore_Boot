@@ -7,8 +7,8 @@
 <title>Orders</title>
 </head>
 <body>
-	<jsp:include page="navbar.jsp" />
-	<jsp:include page="Orders.html" />
-	<jsp:include page="Footer.html" />
+<%@ include file="/views/navbar.jsp" %>
+<%@ include file="/views/Orders.html" %>
+<%@ include file="/views/Footer.html" %>
 </body>
 </html>

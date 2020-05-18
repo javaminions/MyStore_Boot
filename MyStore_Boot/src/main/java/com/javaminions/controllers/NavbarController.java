@@ -58,4 +58,10 @@ public class NavbarController {
 		
 		return "UserProfile";
 	}
+	
+	@GetMapping("orders")
+			public String orders() {
+		
+		return "Orders";
+	}
 }
