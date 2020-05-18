@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.costco.database.Database;
 import com.costco.model.Product;
+import com.costco.model.UserProfile;
 
 public class InitPageService {
 
@@ -43,19 +44,39 @@ public class InitPageService {
 
 		System.out.println("signed in is: " + signedin);
 		Cookie[] cookies = request.getCookies();
+		String firstName = null;
+		String lastName = null;
+		String email = null;
+		String userName = null;
+		String password = null;
+		
 		for (Cookie c : cookies) {
 			if (c.getName().equalsIgnoreCase("usernamecookie")) {
 				session.setAttribute("signedin", "yes");
 				signedin = true;
+				userName = c.getValue();
+				
+			}
+			if (c.getName().equalsIgnoreCase("passwordcookie")) {
+				password = c.getValue();
+			}
+			if (c.getName().equalsIgnoreCase("emailcookie")) {
+				email = c.getValue();
 			}
 			if (c.getName().equalsIgnoreCase("firstnamecookie")) {
-				session.setAttribute("firstName", c.getValue());
+				firstName = c.getValue();
+			}
+			if (c.getName().equalsIgnoreCase("lastnamecookie")) {
+				 lastName = c.getValue();
 			}
 		}
+		
+		UserProfile user = new UserProfile(userName, password, firstName, lastName, email);
+		session.setAttribute("user", user);
 
 		// if not signed in set cart to 0 and set signedin to no
 		if (signedin == false) {
-			String firstName = null;
+			 firstName = null;
 			// cart = 0
 			session.setAttribute("cartCount", "0");
 			session.setAttribute("signedin", "no");

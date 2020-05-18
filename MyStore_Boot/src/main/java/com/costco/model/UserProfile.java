@@ -17,6 +17,7 @@ public class UserProfile {
 		this.password = password;
 		this.email = email;
 	}
+	
 
 	public String getFirstName() {
 		return firstName;
