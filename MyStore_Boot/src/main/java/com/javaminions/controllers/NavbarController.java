@@ -66,29 +66,5 @@ public class NavbarController {
 		return "Orders";
 	}
 	
-	@GetMapping("ball")
-	public String ball() {
-		return "innerProduct";
-		
-	}
-	
-	@GetMapping("shoe")
-	public String shoe() {
-		return "innerProduct";
-	}
-	
-	@GetMapping("visor")
-	public String visor() {
-		return "innerProduct";
-	}
-	
-	@GetMapping("vans")
-	public String vans() {
-		return "innerProduct";
-	}
-	
-	@GetMapping("pole")
-	public String fishing_pole() {
-		return "innerProduct";
-	}
+
 }
