@@ -68,7 +68,6 @@ public class NavbarController {
 	
 	@GetMapping("ball")
 	public String ball() {
-		
 		return "innerProduct";
 		
 	}

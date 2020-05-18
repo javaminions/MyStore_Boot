@@ -7,8 +7,8 @@
 <title>Product Description</title>
 </head>
 <body>
-<jsp:include page="navbar.jsp" />
-<jsp:include page="innerProduct.jsp" />
-<jsp:include page="Footer.html" />
+<%@ include file="/views/navbar.jsp" %>
+<%@ include file="/views/innerProduct.jsp" %>
+<%@ include file="/views/Footer.html" %>
 </body>
 </html>
