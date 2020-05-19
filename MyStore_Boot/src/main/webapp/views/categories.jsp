@@ -41,7 +41,7 @@ $(document).ready(function(){
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark bg-white">
 		<form class="form-inline" action="categories" method="post">
 			<div class="wrap">
-			  		<a href="index.jsp" class="homeButton"><i class="fas fa-home"></i></a>
+			  		<a href="/" class="homeButton"><i class="fas fa-home"></i></a>
 				</div>
 			<input type="hidden" name="hiddenSearch" value=""> 
 			<input class="form-control mr-sm-2" style="margin-left: 50px;" type="text" placeholder="Search" id="searchInput" name="searchInput">

@@ -21,7 +21,8 @@ public class SignInService {
 		System.out.println("sign in called");
 		
 		HttpSession session = request.getSession();
-		UserProfile user = null;
+		UserProfile user = new UserProfile();
+		user.setFirstName("");
 
 //		Database database = Database.getInstance();
 		List<UserProfile> users = (List<UserProfile>) userProfile.findAll();
