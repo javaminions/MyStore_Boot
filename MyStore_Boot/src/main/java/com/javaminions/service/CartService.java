@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.costco.model.Cart;
-import com.costco.model.LineItem;
-import com.costco.model.Product;
+import com.javaminions.model.Cart;
+import com.javaminions.model.LineItem;
+import com.javaminions.model.Product;
 
 
 

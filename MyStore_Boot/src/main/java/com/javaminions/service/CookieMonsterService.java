@@ -5,9 +5,9 @@ import java.util.List;
 
 import javax.servlet.http.Cookie;
 
-import com.costco.database.Database;
-import com.costco.model.LineItem;
-import com.costco.model.Product;
+import com.javaminions.database.Database;
+import com.javaminions.model.LineItem;
+import com.javaminions.model.Product;
 
 public class CookieMonsterService {
 	public static String[] stringify(LineItem lineItem) {

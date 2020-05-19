@@ -1,4 +1,4 @@
-package com.costco.model;
+package com.javaminions.model;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;

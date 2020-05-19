@@ -1,4 +1,4 @@
-package com.costco.database;
+package com.javaminions.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import com.costco.model.*;
+import com.javaminions.model.*;
 
 public class Database {
 	

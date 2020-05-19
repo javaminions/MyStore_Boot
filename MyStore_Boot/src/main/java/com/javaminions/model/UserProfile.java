@@ -1,4 +1,4 @@
-package com.costco.model;
+package com.javaminions.model;
 
 public class UserProfile {
 	

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.costco.model.Cart;
+import com.javaminions.model.Cart;
 import com.javaminions.service.CartService;
 import com.javaminions.service.InitCartService;
 

@@ -8,8 +8,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.costco.model.Cart;
-import com.costco.model.Product;
+import com.javaminions.model.Cart;
+import com.javaminions.model.Product;
 import com.javaminions.service.*;
 
 public class InitCartService {
