@@ -13,13 +13,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.costco.model.Cart;
 import com.javaminions.service.CartService;
+import com.javaminions.service.InitCartService;
 
 @Controller
 public class CartController {
 	
 	@GetMapping("Cart")
 	public String categories(HttpServletResponse response, HttpServletRequest request) {
-		
+	
+	
 		String signedin = (String) request.getSession().getAttribute("signedin");
 		if(signedin==null || signedin.equalsIgnoreCase("no")) {
 			return "home";
@@ -36,13 +38,38 @@ public class CartController {
 	}
 	
 	@GetMapping("showall")
-	public String showall() {
+	public String showall(HttpServletRequest request, HttpServletResponse response) {
+		
+		String signedin = (String) request.getSession().getAttribute("signedin");
+		if(signedin==null || signedin.equalsIgnoreCase("no")) {
+			return "home";
+		}
+		
+		Cart cart = null;
+		if(request.getSession().getAttribute("cart")==null) {
+			cart = new Cart();
+		} else {
+			cart = (Cart) request.getSession().getAttribute("cart");
+		}
 		
 		return "Cart";
+
 	}
 	
 	@GetMapping("addtocart")
-	public String addToCart(Cart cart, @RequestParam String prodcode,  HttpServletRequest request, HttpServletResponse response) {
+	public String addtocart(Cart cart, @RequestParam String prodcode,  HttpServletRequest request, HttpServletResponse response) {
+		
+		String signedin = (String) request.getSession().getAttribute("signedin");
+		if(signedin==null || signedin.equalsIgnoreCase("no")) {
+			return "home";
+		}
+		
+		if(request.getSession().getAttribute("cart")==null) {
+			cart = new Cart();
+		} else {
+			cart = (Cart) request.getSession().getAttribute("cart");
+		}
+		
 		try {
 			
 			new CartService().addToCart(cart, prodcode, request, response);
@@ -55,10 +82,23 @@ public class CartController {
 		
 		return "Cart";
 		
+		
 	}
 	
 	@GetMapping("update")
 	public String updateCart (@RequestParam String action, @RequestParam String prodcode, Cart cart, HttpServletRequest request, HttpServletResponse response) {
+		
+		String signedin = (String) request.getSession().getAttribute("signedin");
+		if(signedin==null || signedin.equalsIgnoreCase("no")) {
+			return "home";
+		}
+		
+		if(request.getSession().getAttribute("cart")==null) {
+			cart = new Cart();
+		} else {
+			cart = (Cart) request.getSession().getAttribute("cart");
+		}
+		
 		try {
 			
 			new CartService().updateCount(action, prodcode, cart, request, response);
@@ -68,7 +108,9 @@ public class CartController {
 		}
 		
 		return "Cart";
+		
 	}
 	
+
 
 }

@@ -26,7 +26,7 @@ public class CartService {
 			request.getRequestDispatcher("IndexHandler?action=signinPage").forward(request, response);
 		}
 		
-		cart = null;
+
 		if(request.getSession().getAttribute("cart")==null) {
 			cart = new Cart();
 		} else {
@@ -42,6 +42,8 @@ public class CartService {
 				//product not found, error 
 				//products should have been loaded correctly by now 
 			}
+			
+			
 		}
 		
 		if(cart.getItemCount()==0) {
@@ -109,6 +111,8 @@ public class CartService {
 			cart.setCart(lineItems);
 			refreshCookies(cart, request, response);
 			request.getSession().setAttribute("cart", cart);
+			request.getRequestDispatcher("showall").forward(request, response);
+			return;
 		}
 		
 		if(action.equalsIgnoreCase("minus")) {
@@ -125,10 +129,13 @@ public class CartService {
 			cart.setCart(lineItems);
 			refreshCookies(cart, request, response);
 			request.getSession().setAttribute("cart", cart);
+			request.getRequestDispatcher("showall").forward(request, response);
+			return;
 		}
 		if(action.equalsIgnoreCase("delete")) {
 			System.out.println(prodcode);
 			ArrayList<LineItem> lineItems = cart.getLineItems();
+			System.out.println(lineItems);
 			int index = 0;
 			for(LineItem lineItem: lineItems) {
 				if(lineItem.getProduct().getCode().equalsIgnoreCase(prodcode)) {
@@ -140,6 +147,8 @@ public class CartService {
 			cart.setCart(lineItems);
 			refreshCookies(cart, request, response);
 			request.getSession().setAttribute("cart", cart);
+			request.getRequestDispatcher("showall").forward(request, response);
+			return;
 		}
 		
 	}
