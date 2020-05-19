@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>Shopping Cart</title>
-<link rel="stylesheet" href="/static/styles/CartStyle.css">
+<link rel="stylesheet" href="styles/CartStyle.css">
 </head>
 <body>
 	<h2>Shopping Cart</h2>
@@ -22,12 +22,12 @@
 						class="item-details" id="item-name">${item.product.description}</span>
 				</div>
 				<div class="item-quantity">
-					<a href="Cart?action=minus&amp;prodcode=${item.product.code}">-</a>
+					<a href="update?action=minus&amp;prodcode=${item.product.code}">-</a>
 					<span class="item-quantity-int">${item.quantity}</span>
-					<a href="Cart?action=plus&amp;prodcode=${item.product.code}">+</a>
+					<a href="update?action=plus&amp;prodcode=${item.product.code}">+</a>
 				</div>
 				<div class="item-price">${item.total}</div>
-				<a href="Cart?action=delete&amp;prodcode=${item.product.code}" class="item-price">Delete Item</a>
+				<a href="update?action=delete&amp;prodcode=${item.product.code}" class="item-price">Delete Item</a>
 			</div>
 		</c:forEach>
 

@@ -29,7 +29,7 @@
 		</div>
 		
 		<div>
-			<a id="cartadd" href="CartServlet?action=addtocart&amp;prodcode=${product.code}"
+			<a id="cartadd" href="addtocart?action=addtocart&amp;prodcode=${product.code}"
 				class="btn btn-danger mt-3 cartButton ${disableButton}">Add to Cart</a>
 		</div>
 
