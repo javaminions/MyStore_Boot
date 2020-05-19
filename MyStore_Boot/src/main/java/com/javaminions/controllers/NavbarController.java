@@ -66,5 +66,9 @@ public class NavbarController {
 		return "Orders";
 	}
 	
+	@GetMapping("wishlist")
+	public String wishlist() {
+		return "WishList";
+	}
 
 }

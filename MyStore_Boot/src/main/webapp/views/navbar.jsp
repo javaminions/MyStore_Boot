@@ -114,10 +114,10 @@
 		
         <ul class="nav navbar-nav navbar-right topNav">
 			<!-- wishlist -->
-			<a href="javascript:void(0)" id="WishList" class="btn btn-default btn-sm myButtons toWishList"> <span
+			<a href="wishlist" id="WishList" class="btn btn-default btn-sm myButtons toWishList"> <span
 				class="glyphicon glyphicon-gift"></span> Wishlist
 			</a>&nbsp
-        <li class="dropdown">
+			<li class="dropdown">
           
           <c:if test="${signedin=='yes'}">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome ${user.firstName}<span class="caret"></span></a>

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.javaminions.service.CarouselService;
 import com.javaminions.service.InitPageService;
 
+
 @Controller
 public class InitController {
 	
@@ -23,8 +24,9 @@ public class InitController {
 			System.out.println(caroSelection);
 			if(caroSelection!=null) {
 				new CarouselService().caroHandler(caroSelection, request, response);
-			
 			}
+		
+			
 		} catch (ServletException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
