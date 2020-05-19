@@ -13,6 +13,8 @@ import com.costco.model.*;
 
 public class Database {
 	
+	static ProductRepo prod;
+	
 	private static Database database = null;
 	private Connection conn = null;
 	private String url = "jdbc:mysql://localhost:3306/mystore_servlet";
@@ -101,6 +103,16 @@ public class Database {
 	}
 	return user;
 
+	}
+	
+	public static List<Product> testProductCrud() {
+		return (List<Product>) prod.findAll();
+	}
+	
+	public static void main(String[]args) {
+		for(Product p:testProductCrud()) {
+			System.out.println(p.getCode());
+		}
 	}
 	
 }
