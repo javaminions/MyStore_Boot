@@ -7,15 +7,19 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+import com.javaminions.repo.UserProfileRepo;
 import com.javaminions.service.SignInService;
 
 @Controller
 public class SignInController {
+	
+	@Autowired
+	UserProfileRepo userProfile;
 
 	@PostMapping("signInUser")
 	public void signInUser(@RequestParam String userName, @RequestParam String password, HttpServletRequest request,
@@ -25,7 +29,7 @@ public class SignInController {
 		
 		try {
 			
-			new SignInService().signInUser(request, response, userName, password);
+			new SignInService().signInUser(request, response, userName, password, userProfile);
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

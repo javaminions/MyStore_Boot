@@ -2,6 +2,7 @@ package com.javaminions.service;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -11,19 +12,25 @@ import javax.servlet.http.HttpSession;
 
 import com.javaminions.database.Database;
 import com.javaminions.model.UserProfile;
+import com.javaminions.repo.UserProfileRepo;
 
 public class SignInService {
 
-	public void signInUser (HttpServletRequest request, HttpServletResponse response, String userName, String password) throws ServletException, IOException, SQLException, ClassNotFoundException {
+	public void signInUser (HttpServletRequest request, HttpServletResponse response, String userName, String password, UserProfileRepo userProfile) throws ServletException, IOException, SQLException, ClassNotFoundException {
 		
 		System.out.println("sign in called");
 		
 		HttpSession session = request.getSession();
+		UserProfile user = null;
+
+//		Database database = Database.getInstance();
+		List<UserProfile> users = (List<UserProfile>) userProfile.findAll();
+		for(UserProfile u:users) {
+			if(u.getUsername().equalsIgnoreCase(userName)) {
+				user = u;
+			}
+		}
 		
-
-		Database database = Database.getInstance();
-
-		UserProfile user = database.grabUserInfoFromDB(userName);
 		
 		if(user.getFirstName().equals("")) {
 			request.getRequestDispatcher("views/register.jsp").forward(request, response);
