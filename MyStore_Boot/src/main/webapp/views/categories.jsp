@@ -92,7 +92,7 @@ $(document).ready(function(){
 	  
 	   <div class="filterDiv ${product.category} ${product.code}">
 			<div class="card" style="width: 18rem;">
-			  <a href="WishList.html" class="card-link text-danger d-flex justify-content-end" style="padding: 10px 10px 0 0;">
+			  <a href="wishlist?prodcode=${product.code}" class="card-link text-danger d-flex justify-content-end" style="padding: 10px 10px 0 0;">
 					       	 <i class="fas fa-heart"></i>
         			 		</a>
 				<img class="card-img-top"
@@ -150,7 +150,7 @@ $(document).ready(function(){
 	  
 	   <div class="filterDiv ${product.category} ${product.code}">
 			<div class="card" style="width: 18rem;">
-			  <a href="WishList.html" class="card-link text-danger d-flex justify-content-end" style="padding: 10px 10px 0 0;">
+			  <a href="wishlist?prodcode=${product.code}" class="card-link text-danger d-flex justify-content-end" style="padding: 10px 10px 0 0;">
 					       	 <i class="fas fa-heart"></i>
         			 		</a>
 				<img class="card-img-top"

@@ -1,9 +1,5 @@
 package com.javaminions.controllers;
 
-import java.io.IOException;
-import java.sql.SQLException;
-
-import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,10 +7,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import com.javaminions.service.CarouselService;
-import com.javaminions.service.SignInService;
 
 @Controller
 public class NavbarController {
@@ -66,9 +58,8 @@ public class NavbarController {
 		return "Orders";
 	}
 	
-	@GetMapping("wishlist")
-	public String wishlist() {
-		return "WishList";
-	}
+	/*
+	 * @GetMapping("wishlist") public String wishlist() { return "WishList"; }
+	 */
 
 }
