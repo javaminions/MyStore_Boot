@@ -8,12 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.javaminions.model.Product;
 import com.javaminions.repo.ProductRepo;
+import com.javaminions.repo.UserProfileRepo;
 import com.javaminions.service.CarouselService;
 import com.javaminions.service.InitPageService;
 
@@ -29,6 +29,7 @@ public class InitController {
 		try {
 			
 			List<Product> prods = (List<Product>) prod.findAll();
+			
 			
 			new InitPageService().pageInitializer(request, response, prods);
 			String caroSelection = request.getParameter("caroSelection");

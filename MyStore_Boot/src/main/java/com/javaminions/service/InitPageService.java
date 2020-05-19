@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.javaminions.model.Product;
 import com.javaminions.model.UserProfile;
+import com.javaminions.repo.UserProfileRepo;
 
 public class InitPageService {
 
@@ -40,6 +41,7 @@ public class InitPageService {
 
 		System.out.println("signed in is: " + signedin);
 		Cookie[] cookies = request.getCookies();
+		int Id = 0;
 		String firstName = null;
 		String lastName = null;
 		String email = null;
@@ -65,9 +67,12 @@ public class InitPageService {
 			if (c.getName().equalsIgnoreCase("lastnamecookie")) {
 				 lastName = c.getValue();
 			}
+			if (c.getName().equalsIgnoreCase("idcookie")) {
+				Id = Integer.parseInt(c.getValue());
+			}
 		}
 		
-		UserProfile user = new UserProfile(userName, password, firstName, lastName, email);
+		UserProfile user = new UserProfile(Id, userName, password, firstName, lastName, email);
 		session.setAttribute("user", user);
 
 		// if not signed in set cart to 0 and set signedin to no

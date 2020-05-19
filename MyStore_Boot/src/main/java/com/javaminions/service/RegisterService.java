@@ -11,10 +11,11 @@ import javax.servlet.http.HttpSession;
 
 import com.javaminions.database.Database;
 import com.javaminions.model.UserProfile;
+import com.javaminions.repo.UserProfileRepo;
 
 public class RegisterService {
 
-public void registerUser (HttpServletRequest request, HttpServletResponse response, String userName, String password, String email, String firstName, String lastName) throws ServletException, IOException, ClassNotFoundException, SQLException {
+public void registerUser (HttpServletRequest request, HttpServletResponse response, String userName, String password, String email, String firstName, String lastName, UserProfileRepo userProfile) throws ServletException, IOException, ClassNotFoundException, SQLException {
 		
 	
 		HttpSession session = request.getSession();
@@ -54,8 +55,11 @@ public void registerUser (HttpServletRequest request, HttpServletResponse respon
 		response.addCookie(lnc);
 		
 
-			Database database = Database.getInstance();
-			database.addUserIntoDB(user);
+		userProfile.save(user);
+		
+		/*
+		 * Database database = Database.getInstance(); database.addUserIntoDB(user);
+		 */
 		
 
 		
