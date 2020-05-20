@@ -1,4 +1,4 @@
-package com.javaminions.model;
+package com.javaminions.pojos;
 
 import java.io.Serializable;
 import java.text.NumberFormat;

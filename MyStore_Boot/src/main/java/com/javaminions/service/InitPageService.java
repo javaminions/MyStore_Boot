@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.javaminions.model.Product;
-import com.javaminions.model.UserProfile;
+import com.javaminions.pojos.Product;
+import com.javaminions.pojos.UserProfile;
 import com.javaminions.repo.UserProfileRepo;
 
 public class InitPageService {

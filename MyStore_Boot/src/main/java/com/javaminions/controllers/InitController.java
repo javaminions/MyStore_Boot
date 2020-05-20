@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.javaminions.model.Product;
+import com.javaminions.pojos.Product;
 import com.javaminions.repo.ProductRepo;
 import com.javaminions.repo.UserProfileRepo;
 import com.javaminions.service.CarouselService;

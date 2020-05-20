@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.javaminions.model.Cart;
+import com.javaminions.model.CartHandler;
 import com.javaminions.service.CartService;
 import com.javaminions.service.InitCartService;
 
@@ -27,11 +27,11 @@ public class CartController {
 			return "home";
 		}
 		
-		Cart cart = null;
+		CartHandler cart = null;
 		if(request.getSession().getAttribute("cart")==null) {
-			cart = new Cart();
+			cart = new CartHandler();
 		} else {
-			cart = (Cart) request.getSession().getAttribute("cart");
+			cart = (CartHandler) request.getSession().getAttribute("cart");
 		}
 		
 		return "Cart";
@@ -45,11 +45,11 @@ public class CartController {
 			return "home";
 		}
 		
-		Cart cart = null;
+		CartHandler cart = null;
 		if(request.getSession().getAttribute("cart")==null) {
-			cart = new Cart();
+			cart = new CartHandler();
 		} else {
-			cart = (Cart) request.getSession().getAttribute("cart");
+			cart = (CartHandler) request.getSession().getAttribute("cart");
 		}
 		
 		return "Cart";
@@ -57,7 +57,7 @@ public class CartController {
 	}
 	
 	@GetMapping("addtocart")
-	public String addtocart(Cart cart, @RequestParam String prodcode,  HttpServletRequest request, HttpServletResponse response) {
+	public String addtocart(CartHandler cart, @RequestParam String prodcode,  HttpServletRequest request, HttpServletResponse response) {
 		
 		String signedin = (String) request.getSession().getAttribute("signedin");
 		if(signedin==null || signedin.equalsIgnoreCase("no")) {
@@ -65,9 +65,9 @@ public class CartController {
 		}
 		
 		if(request.getSession().getAttribute("cart")==null) {
-			cart = new Cart();
+			cart = new CartHandler();
 		} else {
-			cart = (Cart) request.getSession().getAttribute("cart");
+			cart = (CartHandler) request.getSession().getAttribute("cart");
 		}
 		
 		try {
@@ -86,7 +86,7 @@ public class CartController {
 	}
 	
 	@GetMapping("update")
-	public String updateCart (@RequestParam String action, @RequestParam String prodcode, Cart cart, HttpServletRequest request, HttpServletResponse response) {
+	public String updateCart (@RequestParam String action, @RequestParam String prodcode, CartHandler cart, HttpServletRequest request, HttpServletResponse response) {
 		
 		String signedin = (String) request.getSession().getAttribute("signedin");
 		if(signedin==null || signedin.equalsIgnoreCase("no")) {
@@ -94,9 +94,9 @@ public class CartController {
 		}
 		
 		if(request.getSession().getAttribute("cart")==null) {
-			cart = new Cart();
+			cart = new CartHandler();
 		} else {
-			cart = (Cart) request.getSession().getAttribute("cart");
+			cart = (CartHandler) request.getSession().getAttribute("cart");
 		}
 		
 		try {

@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Properties;
 
 import com.javaminions.model.*;
+import com.javaminions.pojos.Product;
+import com.javaminions.pojos.UserProfile;
 
 public class Database {
 	

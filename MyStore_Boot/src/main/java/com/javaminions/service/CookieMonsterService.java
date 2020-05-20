@@ -7,7 +7,7 @@ import javax.servlet.http.Cookie;
 
 import com.javaminions.database.Database;
 import com.javaminions.model.LineItem;
-import com.javaminions.model.Product;
+import com.javaminions.pojos.Product;
 
 public class CookieMonsterService {
 	public static String[] stringify(LineItem lineItem) {

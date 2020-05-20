@@ -3,6 +3,8 @@ package com.javaminions.model;
 import java.io.*;
 import java.util.*;
 
+import com.javaminions.pojos.Product;
+
 public class ProductIO {
 
     public static Product getProduct(String code, String filepath) {

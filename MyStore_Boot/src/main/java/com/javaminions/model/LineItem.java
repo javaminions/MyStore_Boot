@@ -1,5 +1,7 @@
 package com.javaminions.model;
 
+import com.javaminions.pojos.Product;
+
 public class LineItem {
 	
 	private int quantity;

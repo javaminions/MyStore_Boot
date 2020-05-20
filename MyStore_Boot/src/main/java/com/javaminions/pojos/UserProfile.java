@@ -1,4 +1,4 @@
-package com.javaminions.model;
+package com.javaminions.pojos;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,7 +36,6 @@ public class UserProfile {
 	private String lastName;
 	private String username;
 	private String password;
-	private String cartProducts;
 	private String email;
 	
 	public UserProfile(int id, String username, String password, String firstName, String lastName, String email ) {
@@ -79,10 +78,6 @@ public class UserProfile {
 		return password;
 	}
 	
-	public String getCartProducts() {
-		return cartProducts;
-	}
-	
 	public String getEmail() {
 		return email;
 	}
@@ -93,9 +88,5 @@ public class UserProfile {
 	
 	public void setId(int id) {
 		this.id = id;
-	}
-	
-	public void setCartProducts(String cartProducts) {
-		this.cartProducts = cartProducts;
 	}
 }

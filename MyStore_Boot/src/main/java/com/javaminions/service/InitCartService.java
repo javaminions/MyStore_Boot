@@ -8,16 +8,16 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.javaminions.model.Cart;
-import com.javaminions.model.Product;
+import com.javaminions.model.CartHandler;
+import com.javaminions.pojos.Product;
 import com.javaminions.service.*;
 
 public class InitCartService {
 	   public void initCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    	Cookie[] cookies = request.getCookies();
-	    	Cart cart = new Cart();
+	    	CartHandler cart = new CartHandler();
 	    	if(request.getSession().getAttribute("cart")!=null) {
-	    		cart = (Cart) request.getSession().getAttribute("cart");
+	    		cart = (CartHandler) request.getSession().getAttribute("cart");
 	    	} else {
 	    		ArrayList<Product> products = (ArrayList<Product>) request.getSession().getAttribute("products");
 	    		//if a product matches set the cart line items 

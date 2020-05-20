@@ -11,15 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.javaminions.model.Cart;
+import com.javaminions.model.CartHandler;
 import com.javaminions.model.LineItem;
-import com.javaminions.model.Product;
+import com.javaminions.pojos.Product;
 
 
 
 public class CartService {
 
-	public void addToCart(Cart cart, String prodcode, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void addToCart(CartHandler cart, String prodcode, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String signedin = (String) request.getSession().getAttribute("signedin");
 		if(signedin==null || signedin.equalsIgnoreCase("no")) {
@@ -28,9 +28,9 @@ public class CartService {
 		
 
 		if(request.getSession().getAttribute("cart")==null) {
-			cart = new Cart();
+			cart = new CartHandler();
 		} else {
-			cart = (Cart) request.getSession().getAttribute("cart");
+			cart = (CartHandler) request.getSession().getAttribute("cart");
 		}
 		
 		ArrayList<Product> products = (ArrayList<Product>) request.getSession().getAttribute("products");
@@ -82,7 +82,7 @@ public class CartService {
 	}
 	
 	
-	public void initializeCart(Cart cart, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void initializeCart(CartHandler cart, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//read cookies
 		Cookie[] cookies = request.getCookies();
 		List<Product> products = (List<Product>) request.getSession().getAttribute("products");
@@ -95,7 +95,7 @@ public class CartService {
 	}
 	
 	
-	public void updateCount(String action, String prodcode, Cart cart, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void updateCount(String action, String prodcode, CartHandler cart, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		if(action.equalsIgnoreCase("plus")) {
 			System.out.println("action is plus method");
@@ -154,7 +154,7 @@ public class CartService {
 	}
 	
 	
-	public void refreshCookies(Cart cart, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void refreshCookies(CartHandler cart, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Cookie[] cookies = request.getCookies();
 		for(Cookie c: cookies) {
 			if(c.getName().contains("cartprod")) {

@@ -4,11 +4,11 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cart {
+public class CartHandler {
 	
 	private ArrayList<LineItem> lineItems = new ArrayList();
 	
-	public Cart() {
+	public CartHandler() {
 		
 	}
 	public void addLineItem(LineItem lineItem) {

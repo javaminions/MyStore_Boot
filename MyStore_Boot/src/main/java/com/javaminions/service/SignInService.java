@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.javaminions.database.Database;
-import com.javaminions.model.UserProfile;
+import com.javaminions.pojos.UserProfile;
 import com.javaminions.repo.UserProfileRepo;
 
 public class SignInService {
