@@ -16,6 +16,7 @@ public class CreateOrder {
 	int user_id = 0;
 	CreateOrder(String username){
 		this.username = username;
+		findUserId();
 	}
 	
 	@Autowired
