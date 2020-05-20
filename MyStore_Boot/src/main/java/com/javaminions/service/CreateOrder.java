@@ -2,31 +2,26 @@ package com.javaminions.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-
 import com.javaminions.pojos.Orders;
 import com.javaminions.pojos.UserProfile;
 import com.javaminions.repo.OrdersRepo;
 import com.javaminions.repo.UserProfileRepo;
 
-@Controller
+
 public class CreateOrder {
 	String username = "";
+	UserProfileRepo uProfile;
+	OrdersRepo oRepo;
 	int user_id = 0;
-	CreateOrder(String username){
+	CreateOrder(String username, OrdersRepo oRepo, UserProfileRepo uProfile){
 		this.username = username;
+		this.uProfile = uProfile;
+		this.oRepo = oRepo;
 		findUserId();
 	}
 	
-	@Autowired
-	OrdersRepo orders;
-	
-	@Autowired
-	UserProfileRepo userProfiles;
-	
 	void findUserId() {
-		List<UserProfile> uProfiles = (List<UserProfile>) userProfiles.findAll();
+		List<UserProfile> uProfiles = (List<UserProfile>) uProfile.findAll();
 		for(UserProfile u: uProfiles) {
 			if(u.getUsername().equalsIgnoreCase(username)) {
 				user_id = u.getId();
@@ -36,8 +31,8 @@ public class CreateOrder {
 	int getOrderId() {
 		Orders newOrder = new Orders();
 		newOrder.setUser_id(user_id);
-		orders.save(newOrder);
-		List <Orders> allOrders = (List<Orders>) orders.findAll();
+		oRepo.save(newOrder);
+		List <Orders> allOrders = (List<Orders>) oRepo.findAll();
 		return allOrders.get(allOrders.size()-1).getId();
 	}
 
