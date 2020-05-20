@@ -4,10 +4,11 @@
 <meta charset="utf-8">
 <title></title>
 <link rel="stylesheet" href="styles/ProfileStyle.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
 	<div class="Profile">
-		<h2>Profile</h2>
+		<h2 style="margin-left: 4%;">Profile</h2>
 		<br>
 		<div class="card">
 			<div class="card-inner">
@@ -49,10 +50,22 @@
 					<td>0</td>
 				</tr>
 			</table>
-			<div id="side-info-span">
+			<div class="side-info-span">
 				<span>Edit info</span>
 			</div>
 		</div>
+			<div class="update-info">
+			<div class="update-info-description">
+			 
+				<h3><i class="fas fa-unlock-alt" style="margin-right: 12px;"></i>Login and Security</h3>
+				<p>Update your account settings here</p>
+			</div>
+		
+			<div class="side-info-span">
+				<span><a href="account">Update</a></span>
+			</div>
+		</div>
 	</div>
+	
 </body>
 </html>
