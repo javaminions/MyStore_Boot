@@ -13,6 +13,7 @@ public class CreateOrder {
 	UserProfileRepo uProfile;
 	OrdersRepo oRepo;
 	int user_id = 0;
+	
 	public CreateOrder(String username, OrdersRepo oRepo, UserProfileRepo uProfile){
 		this.username = username;
 		this.uProfile = uProfile;
@@ -24,10 +25,12 @@ public class CreateOrder {
 		List<UserProfile> uProfiles = (List<UserProfile>) uProfile.findAll();
 		for(UserProfile u: uProfiles) {
 			if(u.getUsername().equalsIgnoreCase(username)) {
+				System.out.println("UserID ==" + u.getId());
 				user_id = u.getId();
 			}
 		}
 	}
+	
 	public int getOrderId() {
 		Orders newOrder = new Orders();
 		newOrder.setUser_id(user_id);
