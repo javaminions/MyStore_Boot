@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.javaminions.model.CartHandler;
 import com.javaminions.model.LineItem;
+import com.javaminions.pojos.UserProfile;
 import com.javaminions.repo.OrderDetailsRepo;
 import com.javaminions.repo.OrdersRepo;
 import com.javaminions.repo.UserProfileRepo;
@@ -34,8 +35,8 @@ public class OrderController {
 	public String submitOrder(HttpServletRequest request, HttpServletResponse response) {
 
 		
-		String username = (String) request.getSession().getAttribute("username");
-		CreateOrder order = new CreateOrder(username, oRepo, uProfile);
+		UserProfile user = (UserProfile) request.getSession().getAttribute("user");
+		CreateOrder order = new CreateOrder(user.getUsername(), oRepo, uProfile);
 		int orderid = order.getOrderId();
 		CartHandler cart = (CartHandler) request.getSession().getAttribute("cart");
 		ArrayList<LineItem> products = cart.getLineItems();
