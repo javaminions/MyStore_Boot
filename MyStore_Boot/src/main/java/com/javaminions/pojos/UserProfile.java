@@ -38,7 +38,17 @@ public class UserProfile {
 	private String password;
 	private String email;
 	
-	public UserProfile(int id, String username, String password, String firstName, String lastName, String email ) {
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+
+	public boolean isAdmin;
+	
+	public UserProfile(int id, String username, String password, String firstName, String lastName, String email, Boolean isAdmin ) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -46,15 +56,17 @@ public class UserProfile {
 		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.isAdmin = isAdmin;
 	}
 	
-	public UserProfile(String username, String password, String firstName, String lastName, String email ) {
+	public UserProfile(String username, String password, String firstName, String lastName, String email, boolean isAdmin ) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.isAdmin = isAdmin;
 	}
 	
 	public UserProfile() {

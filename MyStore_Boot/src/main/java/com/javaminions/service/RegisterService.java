@@ -19,7 +19,7 @@ public void registerUser (HttpServletRequest request, HttpServletResponse respon
 		
 	
 		HttpSession session = request.getSession();
-		UserProfile user = new UserProfile(userName, password, firstName, lastName, email);
+		UserProfile user = new UserProfile(userName, password, firstName, lastName, email, false);
 		session.setAttribute("user", user);
 		
 		//UserName Cookie
