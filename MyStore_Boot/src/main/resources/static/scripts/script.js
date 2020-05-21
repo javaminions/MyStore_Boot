@@ -6,7 +6,7 @@ $(document).ready(function() {
 						$(window).scrollTop(0);
 					});
 					
-					$(".dropdown").hover(            
+					$(".dropdown").hover(   
                             function() {
                               $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,false).slideDown("400");
                               $(this).toggleClass('open');        

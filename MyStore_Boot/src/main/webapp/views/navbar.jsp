@@ -33,7 +33,7 @@
 	<div class="collapse navbar-collapse js-navbar-collapse topNav">
 		<ul class="nav navbar-nav topNav">
 			<li class="dropdown mega-dropdown topNav">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>				
+				<a href="#" class="none">Categories <span class="caret"></span></a>				
 				<ul class="dropdown-menu mega-dropdown-menu ">
 					<li class="col-sm-3">
 						<ul>

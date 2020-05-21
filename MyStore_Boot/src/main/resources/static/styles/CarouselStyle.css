@@ -1,4 +1,6 @@
-
+.Container{
+	z-index: 1;
+}
 .imgheight img {
 	height: 35% !important;
 }
