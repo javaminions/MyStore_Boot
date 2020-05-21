@@ -13,7 +13,7 @@ public class CreateOrder {
 	UserProfileRepo uProfile;
 	OrdersRepo oRepo;
 	int user_id = 0;
-	CreateOrder(String username, OrdersRepo oRepo, UserProfileRepo uProfile){
+	public CreateOrder(String username, OrdersRepo oRepo, UserProfileRepo uProfile){
 		this.username = username;
 		this.uProfile = uProfile;
 		this.oRepo = oRepo;
@@ -28,7 +28,7 @@ public class CreateOrder {
 			}
 		}
 	}
-	int getOrderId() {
+	public int getOrderId() {
 		Orders newOrder = new Orders();
 		newOrder.setUser_id(user_id);
 		oRepo.save(newOrder);

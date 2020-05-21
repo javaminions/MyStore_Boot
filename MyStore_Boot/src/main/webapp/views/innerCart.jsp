@@ -42,7 +42,7 @@
 			</div>
 		</div>
 		<div class="checkout">
-			<button type="button" name="button">Checkout</button>
+			<a href="submitorder"><button type="submit" name="button">Checkout</button></a>
 		</div>
 	</div>
 </body>
