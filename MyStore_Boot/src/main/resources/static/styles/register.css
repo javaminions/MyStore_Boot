@@ -58,6 +58,11 @@ form input[type="text"]:valid, input[type="email"]:valid, input[type="password"]
 	border-color: lightblue;
 }
 
+.message {
+	color: red;
+	font-weight: bold;
+}
+
 
 
 

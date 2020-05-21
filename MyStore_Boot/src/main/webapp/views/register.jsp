@@ -12,6 +12,7 @@
 <body>
 <%@ include file="/views/navbar.jsp" %>
 <div class="registrationContainer">
+<div class="message">${message}<br></div>
 <h1>Don't have an account?</h1>
 <h2>Register with us!</h2>
 
