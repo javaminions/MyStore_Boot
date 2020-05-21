@@ -11,11 +11,12 @@ import javax.servlet.http.HttpSession;
 
 import com.javaminions.pojos.Product;
 import com.javaminions.pojos.UserProfile;
+import com.javaminions.pojos.Wishlist;
 import com.javaminions.repo.UserProfileRepo;
 
 public class InitPageService {
 
-	public void pageInitializer(HttpServletRequest request, HttpServletResponse response, List<Product> prods, List<UserProfile> users)
+	public void pageInitializer(HttpServletRequest request, HttpServletResponse response, List<Product> prods, List<UserProfile> users, List<Wishlist> wishlist)
 			throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
@@ -48,6 +49,7 @@ public class InitPageService {
 		for(UserProfile u:users) {
 			if(u.getUsername().equalsIgnoreCase(userName)) {
 				user = u;
+				new InitWishlistService().generateWishlist(request, response, wishlist, user);
 			}
 		}
 		

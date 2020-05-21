@@ -11,13 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.javaminions.database.Database;
+import com.javaminions.pojos.Product;
 import com.javaminions.pojos.UserProfile;
+import com.javaminions.pojos.Wishlist;
 import com.javaminions.repo.UserProfileRepo;
 
 public class SignInService {
 
-	public void signInUser (HttpServletRequest request, HttpServletResponse response, String userName, String password, UserProfileRepo userProfile) throws ServletException, IOException, SQLException, ClassNotFoundException {
-		
+	public void signInUser (HttpServletRequest request, HttpServletResponse response, String userName, String password, UserProfileRepo userProfile, List<Wishlist> wishlist, List<Product> prods) throws ServletException, IOException, SQLException, ClassNotFoundException {		
 		System.out.println("sign in called");
 		String message= "";
 		
@@ -30,6 +31,7 @@ public class SignInService {
 		for(UserProfile u:users) {
 			if(u.getUsername().equalsIgnoreCase(userName)) {
 				user = u;
+				new InitWishlistService().generateWishlist(request, response, wishlist, user);
 			}
 		}
 		
