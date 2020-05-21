@@ -28,8 +28,7 @@
 							<span class="item-details" id="item-name">${item.product.description}</span>
 						</div>
 						<div class="item-quantity">
-							<span class="item-quantity-int">${item.quantity}</span> <a
-								href="update?action=plus&amp;prodcode=${item.product.code}">+</a>
+							<span class="item-quantity-int">${item.quantity}</span>
 						</div>
 						<div class="item-price">${item.total}</div>
 						

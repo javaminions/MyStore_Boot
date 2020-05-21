@@ -36,19 +36,15 @@ public class DisplayOrdersService {
 	public void matchOrders() {
 		for(Orders o: orders) {
 			if(o.getUser_id()==user_id) {
-				System.out.println("Matched user_id" + user_id + " with o.getUserId()==" + o.getUser_id());
 				customerOrders.add(o);
 			}
 		}
 	}
 	public void matchOrderDetails() {
 		for(OrderDetails o: orderDetails) {
-			System.out.println("OrderDetails" + orderDetails==null);
 			for(Orders co: customerOrders) {
-				System.out.println(customerOrders==null);
 				if(co.getId()==o.getOrder_id()) {
 					matchedCustomerDetails.add(o);
-					System.out.println("Added " + o.toString());
 				}
 			}
 		}

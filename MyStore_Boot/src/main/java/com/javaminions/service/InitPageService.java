@@ -15,7 +15,7 @@ import com.javaminions.repo.UserProfileRepo;
 
 public class InitPageService {
 
-	public void pageInitializer(HttpServletRequest request, HttpServletResponse response, List<Product> prods)
+	public void pageInitializer(HttpServletRequest request, HttpServletResponse response, List<Product> prods, List<UserProfile> users)
 			throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
@@ -41,12 +41,7 @@ public class InitPageService {
 
 		System.out.println("signed in is: " + signedin);
 		Cookie[] cookies = request.getCookies();
-		int Id = 0;
-		String firstName = null;
-		String lastName = null;
-		String email = null;
 		String userName = null;
-		String password = null;
 		
 		for (Cookie c : cookies) {
 			if (c.getName().equalsIgnoreCase("usernamecookie")) {
@@ -55,29 +50,21 @@ public class InitPageService {
 				userName = c.getValue();
 				
 			}
-			if (c.getName().equalsIgnoreCase("passwordcookie")) {
-				password = c.getValue();
-			}
-			if (c.getName().equalsIgnoreCase("emailcookie")) {
-				email = c.getValue();
-			}
-			if (c.getName().equalsIgnoreCase("firstnamecookie")) {
-				firstName = c.getValue();
-			}
-			if (c.getName().equalsIgnoreCase("lastnamecookie")) {
-				 lastName = c.getValue();
-			}
-			if (c.getName().equalsIgnoreCase("idcookie")) {
-				Id = Integer.parseInt(c.getValue());
+		}
+		
+		
+		UserProfile user = new UserProfile();
+		
+		for(UserProfile u:users) {
+			if(u.getUsername().equalsIgnoreCase(userName)) {
+				user = u;
 			}
 		}
 		
-		UserProfile user = new UserProfile(Id, userName, password, firstName, lastName, email);
 		session.setAttribute("user", user);
 
 		// if not signed in set cart to 0 and set signedin to no
 		if (signedin == false) {
-			 firstName = null;
 			// cart = 0
 			session.setAttribute("cartCount", "0");
 			session.setAttribute("signedin", "no");

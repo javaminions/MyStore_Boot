@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.javaminions.pojos.Product;
+import com.javaminions.pojos.UserProfile;
 import com.javaminions.repo.ProductRepo;
 import com.javaminions.repo.UserProfileRepo;
 import com.javaminions.service.CarouselService;
@@ -24,14 +25,18 @@ public class InitController {
 	@Autowired
 	ProductRepo prod;
 	
+	@Autowired
+	UserProfileRepo userP;
+	
 	@GetMapping("/")
 	public String goHome(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			
 			List<Product> prods = (List<Product>) prod.findAll();
+			List<UserProfile> users = (List<UserProfile>) userP.findAll();
 			
 			
-			new InitPageService().pageInitializer(request, response, prods);
+			new InitPageService().pageInitializer(request, response, prods, users);
 			String caroSelection = request.getParameter("caroSelection");
 			System.out.println(caroSelection);
 			if(caroSelection!=null) {
