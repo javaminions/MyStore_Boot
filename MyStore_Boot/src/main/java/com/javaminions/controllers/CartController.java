@@ -61,7 +61,7 @@ public class CartController {
 		
 		String signedin = (String) request.getSession().getAttribute("signedin");
 		if(signedin==null || signedin.equalsIgnoreCase("no")) {
-			return "home";
+			return "signin";
 		}
 		
 		if(request.getSession().getAttribute("cart")==null) {
