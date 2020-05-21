@@ -31,79 +31,14 @@ public class UserService {
 				u.setEmail(email);
 				userProfile.save(u);
 				
-				Cookie[] cookies = request.getCookies();
-				for(Cookie c: cookies) {
-					if(c.getName().contains("userName")) {
-						c.setMaxAge(0);
-						c.setPath("/");
-					}
-					
-					if(c.getName().contains("passwordCookie")) {
-						c.setMaxAge(0);
-						c.setPath("/");
-					}
-					
-					if(c.getName().contains("emailCookie")) {
-						c.setMaxAge(0);
-						c.setPath("/");
-					}
-					
-					if(c.getName().contains("firstNameCookie")) {
-						c.setMaxAge(0);
-						c.setPath("/");
-					}
-					
-					if(c.getName().contains("lastNameCookie")) {
-						c.setMaxAge(0);
-						c.setPath("/");
-					}
-				}
-				
-				
-				//UserName Cookie
+				CookieMonsterService.updateUserCookies(request, response, username, password, email, firstName, lastName);
+
 				session.setAttribute("userName", u.getUsername());
-				Cookie unc = new Cookie("userNameCookie", username);
-				unc.setPath("/");
-				unc.setMaxAge(60 * 60 * 24 * 365 * 2);
-				response.addCookie(unc);
-				
-				
-				//Password Cookie
-				Cookie pc = new Cookie("passwordCookie", u.getPassword());
-				pc.setPath("/");
-				pc.setMaxAge(60 * 60 * 24 * 365 * 2);
-				response.addCookie(pc);
-				
-				//Email Cookie
-				Cookie ec = new Cookie("emailCookie", u.getEmail());
-				ec.setPath("/");
-				ec.setMaxAge(60 * 60 * 24 * 365 * 2);
-				response.addCookie(ec);
-				
-				//First Name Cookie
-				Cookie fnc = new Cookie("firstNameCookie", u.getFirstName());
-				fnc.setPath("/");
-				fnc.setMaxAge(60 * 60 * 24 * 365 * 2);
-				response.addCookie(fnc);
-				
-				//Last Name Cookie
-				Cookie lnc = new Cookie("lastNameCookie", u.getLastName());
-				lnc.setPath("/");
-				lnc.setMaxAge(60 * 60 * 24 * 365 * 2);
-				response.addCookie(lnc);
-				
 				session.setAttribute("user", u);
-			}
-			
+			}		
 		}
-		
-		/*
-		 * Database database = Database.getInstance(); database.addUserIntoDB(user);
-		 */
 		
 		session.setAttribute("signedin", "yes");
 		request.getRequestDispatcher("views/home.jsp").forward(request, response);
-		
 	}
-	
 }

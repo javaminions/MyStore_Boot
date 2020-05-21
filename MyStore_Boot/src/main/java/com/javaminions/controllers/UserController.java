@@ -31,8 +31,7 @@ public class UserController {
 	@PostMapping("/updateUser")
 	public String update(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String username, @RequestParam String password, HttpServletRequest request, HttpServletResponse response) {
 		try {
-			System.out.println("updateUser called");
-	new UserService().updateUser(email, firstName, lastName, username, password, request, response, userProfile);
+			new UserService().updateUser(email, firstName, lastName, username, password, request, response, userProfile);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (ServletException e) {
