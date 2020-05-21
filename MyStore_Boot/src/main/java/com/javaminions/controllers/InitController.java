@@ -38,7 +38,7 @@ public class InitController {
 			
 			new InitPageService().pageInitializer(request, response, prods, users);
 			String caroSelection = request.getParameter("caroSelection");
-			System.out.println(caroSelection);
+//			System.out.println(caroSelection);
 			if(caroSelection!=null) {
 				new CarouselService().caroHandler(caroSelection, request, response);
 			}

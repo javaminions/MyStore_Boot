@@ -39,10 +39,10 @@
 
 				<div class="total">
 					<div class="total-items">
-						<span>Total Items: </span> <span id="total-items">${cart.getItemCount()}</span>
+						<span>Total Items: </span> <span id="total-items">${orderHistory.cart.getItemCount()}</span>
 					</div>
 					<div class="total-cost">
-						<span>Total:</span> <span id="total-cost">${cart.getTotalCost()}</span>
+						<span>Total:</span> <span id="total-cost">${orderHistory.cart.getTotalCost()}</span>
 					</div>
 				</div>
 			</div>

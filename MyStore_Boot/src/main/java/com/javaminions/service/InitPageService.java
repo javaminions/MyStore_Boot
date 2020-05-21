@@ -39,7 +39,7 @@ public class InitPageService {
 		// if so set signedin to yes and
 		// retrieve firstName cookie to set as session attribute
 
-		System.out.println("signed in is: " + signedin);
+		//System.out.println("signed in is: " + signedin);
 		Cookie[] cookies = request.getCookies();
 		String userName = null;
 		
