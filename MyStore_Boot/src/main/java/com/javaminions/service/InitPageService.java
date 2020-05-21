@@ -21,19 +21,7 @@ public class InitPageService {
 		HttpSession session = request.getSession();
 		boolean signedin = false;
 
-		// Load products in session if null
-		if (session.getAttribute("products") == null) {
-			// init products
-			/*
-			 * Database database = null; List<Product> products = null; try { database =
-			 * Database.getInstance(); products = database.getAll(); } catch
-			 * (ClassNotFoundException e) { e.printStackTrace(); } catch (SQLException e) {
-			 * e.printStackTrace(); } session.setAttribute("products", products);
-			 */
-			
-			session.setAttribute("products", prods);
-			
-		}
+		request.getSession().setAttribute("products", prods);
 
 		// check to see if signed in,
 		// if so set signedin to yes and

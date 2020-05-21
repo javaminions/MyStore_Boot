@@ -9,9 +9,8 @@ import javax.servlet.http.HttpSession;
 import com.javaminions.pojos.Product;
 
 public class CategoryService {
-	public void searchProductByName(HttpServletRequest request, HttpServletResponse response, String searchInput) {
+	public void searchProductByName(HttpServletRequest request, HttpServletResponse response, String searchInput, ArrayList<Product> products) {
 		HttpSession session = request.getSession();
-		ArrayList<Product> products = (ArrayList<Product>) session.getAttribute("products");
 
 		ArrayList<Product> filteredProducts = new ArrayList<Product>();
 		if (searchInput != null && searchInput != "") {

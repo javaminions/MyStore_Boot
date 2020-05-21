@@ -19,8 +19,10 @@ public class CategoryController {
 	@PostMapping("/categories")
 	public String searchName(@RequestParam String searchInput, HttpServletRequest request,
 			HttpServletResponse response) {
+		
+		ArrayList<Product> products = (ArrayList<Product>) request.getSession().getAttribute("products");
 
-		new CategoryService().searchProductByName(request, response, searchInput);
+		new CategoryService().searchProductByName(request, response, searchInput, products);
 
 		return "categories";
 	}
