@@ -87,18 +87,18 @@ public class Database {
 	ps.execute();
 	rset = ps.getResultSet();
 	if(rset.next()) {
-		user = new UserProfile(
-				rset.getString("username"),
-				rset.getString("password"),
-				rset.getString("firstname"),
-				rset.getString("lastname"),
-				rset.getString("email")
-				);
-		return user;
+//		user = new UserProfile(
+//				rset.getString("username"),
+//				rset.getString("password"),
+//				rset.getString("firstname"),
+//				rset.getString("lastname"),
+//				rset.getString("email")
+//				);
+//		return user;
 	} 
 	
 	else if (rset.next() == false) { 
-		user = new UserProfile("", "","", "","");
+//		user = new UserProfile("", "","", "","");
 		return user;
 	}
 	return user;
