@@ -14,10 +14,9 @@ import com.javaminions.pojos.Wishlist;
 public class InitWishlistService {
 
 	public void generateWishlist(HttpServletRequest request, HttpServletResponse response, List<Wishlist> wishlist,
-			UserProfile user) {
+			UserProfile user, List<Product> prods) {
 
 		HttpSession session = request.getSession();
-		List<Product> prods = (List<Product>) session.getAttribute("products");
 		WishlistHandler wh = new WishlistHandler();
 
 		if (session.getAttribute("wishlist") == null) {

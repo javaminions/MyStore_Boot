@@ -49,7 +49,7 @@ public class InitPageService {
 		for(UserProfile u:users) {
 			if(u.getUsername().equalsIgnoreCase(userName)) {
 				user = u;
-				new InitWishlistService().generateWishlist(request, response, wishlist, user);
+				new InitWishlistService().generateWishlist(request, response, wishlist, user, prods);
 			}
 		}
 		

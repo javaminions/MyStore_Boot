@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.javaminions.database.Database;
 import com.javaminions.pojos.Product;
 import com.javaminions.pojos.UserProfile;
 import com.javaminions.pojos.Wishlist;
@@ -31,7 +30,7 @@ public class SignInService {
 		for(UserProfile u:users) {
 			if(u.getUsername().equalsIgnoreCase(userName)) {
 				user = u;
-				new InitWishlistService().generateWishlist(request, response, wishlist, user);
+				new InitWishlistService().generateWishlist(request, response, wishlist, user, prods);
 			}
 		}
 		
