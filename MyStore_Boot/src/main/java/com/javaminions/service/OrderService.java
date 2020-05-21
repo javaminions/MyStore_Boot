@@ -28,6 +28,8 @@ public class OrderService {
 
 			odr.save(od);
 		}
+		
+		
 
 		// delete products out of the cart
 		products.clear();
@@ -44,6 +46,7 @@ public class OrderService {
 
 			new CartService().refreshCookies(cart, request, response);
 			request.getSession().setAttribute("cart", cart);
+			request.getSession().setAttribute("orderid", orderid);
 
 		}
 

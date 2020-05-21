@@ -19,6 +19,7 @@ public class SignInService {
 	public void signInUser (HttpServletRequest request, HttpServletResponse response, String userName, String password, UserProfileRepo userProfile) throws ServletException, IOException, SQLException, ClassNotFoundException {
 		
 		System.out.println("sign in called");
+		String message= "";
 		
 		HttpSession session = request.getSession();
 		UserProfile user = new UserProfile();
@@ -34,6 +35,8 @@ public class SignInService {
 		
 		
 		if(user.getFirstName().equals("")) {
+			message = "We could not find your username, please register before proceeding";
+			request.setAttribute("message", message);
 			request.getRequestDispatcher("views/register.jsp").forward(request, response);
 		}
 		
@@ -72,6 +75,7 @@ public class SignInService {
 			lnc.setMaxAge(60 * 60 * 24 * 365 * 2);
 			response.addCookie(lnc);
 			
+			request.getSession().setAttribute("message", message);
 			request.getRequestDispatcher("views/home.jsp").forward(request, response);
 			
 		} 

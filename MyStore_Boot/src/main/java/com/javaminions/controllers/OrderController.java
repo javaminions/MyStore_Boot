@@ -53,8 +53,14 @@ public class OrderController {
 		
 		
 		
-		return "home";
+		return "AfterCheck";
 		
+	}
+	
+	@GetMapping("/donechecking")
+	public String doneOrdering() {
+		
+		return "home";
 	}
 	
 
