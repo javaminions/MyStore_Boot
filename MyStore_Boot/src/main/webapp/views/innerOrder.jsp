@@ -7,6 +7,7 @@
 
 <title>Your Order</title>
 <link rel="stylesheet" href="styles/OrdersStyle.css">
+<link rel="stylesheet" href="styles/CartStyle.css">
 </head>
 <body>
 
