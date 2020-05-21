@@ -121,6 +121,7 @@ public class CartService {
 				if(lineItem.getProduct().getCode().equalsIgnoreCase(prodcode)) {
 					if(lineItem.getQuantity()==1) {
 						cart.removeLineItem(lineItem);
+						break;
 					} else {
 						lineItem.setQuantity(lineItem.getQuantity()-1);
 					}
