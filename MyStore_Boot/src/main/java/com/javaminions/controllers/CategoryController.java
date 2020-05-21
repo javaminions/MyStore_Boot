@@ -22,8 +22,8 @@ public class CategoryController {
 	@RequestMapping("/categories")
 	public String searchName(HttpServletRequest request,
 			HttpServletResponse response) {
-		System.out.println("HIT CATEGORIES");
 		List<Product> products = (List<Product>) prods.findAll();
+		request.getSession().setAttribute("products", products);
 
 		new CategoryService().searchProductByName(request, response, products);
 
