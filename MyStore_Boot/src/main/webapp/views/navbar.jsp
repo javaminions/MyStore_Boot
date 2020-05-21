@@ -134,9 +134,9 @@
         </li>
         <li><a href="Cart?action=showAll" class="Cart-btn">My cart (${cartCount}) items</a></li>
       </ul>
-         <form class="form-inline my-2 my-lg-0 " id="search-bar">
+         <form class="form-inline my-2 my-lg-0 " id="search-bar" action="categories" method="post">
 				<input class="form-control mr-sm-2" type="text" placeholder="Search"
-					aria-label="Search">
+					aria-label="Search" id="searchInput" name="searchInput">
 				<button class="btn btn-outline-success my-2 my-sm-0 box" type="submit" id="nav_button">Search</button>
 			</form>
 
