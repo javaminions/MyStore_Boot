@@ -10,12 +10,12 @@ INSERT INTO Product(code, name, description, inventory, price, category, img) VA
 ("8", "Soccer Ball", "Kick me up, kick me down, kick me all around. Surpass Messi and kick away!", 500, 79.99, "sports", 'https://javaminions.github.io/images/ball.jpg');
 
 TRUNCATE user_profile;
-INSERT INTO user_profile (first_name, last_name, password, username, email)
+INSERT INTO user_profile (first_name, last_name, password, username, email, is_admin)
 VALUES
-("Christian", "Juste", "password123", "chrisjuste", "chris@email.com"),
-("Ryan", "Thonn", "password123", "ryan", "ryan@email.com"),
-("Rebecca", "Culp", "password123", "becca", "becca@email.com"),
-("Hyunhee", "Cho", "password123", "heny", "heny@email.com");
+("Christian", "Juste", "password123", "chrisjuste", "chris@email.com", 0),
+("Ryan", "Thonn", "password123", "ryan", "ryan@email.com", 0),
+("Rebecca", "Culp", "password123", "becca", "becca@email.com", 0),
+("Hyunhee", "Cho", "password123", "heny", "heny@email.com", 0);
 
 TRUNCATE cart;
 INSERT INTO cart (user_id) VALUES
