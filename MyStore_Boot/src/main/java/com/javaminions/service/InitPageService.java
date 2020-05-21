@@ -31,12 +31,14 @@ public class InitPageService {
 		Cookie[] cookies = request.getCookies();
 		String userName = null;
 		
-		for (Cookie c : cookies) {
-			if (c.getName().equalsIgnoreCase("usernamecookie")) {
-				session.setAttribute("signedin", "yes");
-				signedin = true;
-				userName = c.getValue();
-				
+		if(cookies!=null) {
+			for (Cookie c : cookies) {
+				if (c.getName().equalsIgnoreCase("usernamecookie")) {
+					session.setAttribute("signedin", "yes");
+					signedin = true;
+					userName = c.getValue();
+					
+				}
 			}
 		}
 		

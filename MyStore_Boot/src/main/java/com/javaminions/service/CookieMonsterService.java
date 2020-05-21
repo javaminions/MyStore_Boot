@@ -48,18 +48,18 @@ public class CookieMonsterService {
 
 	}
 
-	public static void main(String[] args) {
-		Cookie c = new Cookie("cartprod1", "2");
-		List<Product> products = null;
-		try {
-			products = Database.getInstance().getAll();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		System.out.println(unstringify(c, products));
-	}
+//	public static void main(String[] args) {
+//		Cookie c = new Cookie("cartprod1", "2");
+//		List<Product> products = null;
+//		try {
+//			products = Database.getInstance().getAll();
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		System.out.println(unstringify(c, products));
+//	}
 
 	public static void updateUserCookies(HttpServletRequest request, HttpServletResponse response, String username,
 			String password, String email, String firstname, String lastname) {

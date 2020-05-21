@@ -21,10 +21,12 @@ public class InitCartService {
 	    	} else {
 	    		ArrayList<Product> products = (ArrayList<Product>) request.getSession().getAttribute("products");
 	    		//if a product matches set the cart line items 
-	    		for(Cookie c: cookies) {
-	    			if(c.getName().contains("cartprod")) {
-	    				cart.addLineItem(CookieMonsterService.unstringify(c, products));
-	    			}
+	    		if(cookies!=null) {
+	    			for(Cookie c: cookies) {
+		    			if(c.getName().contains("cartprod")) {
+		    				cart.addLineItem(CookieMonsterService.unstringify(c, products));
+		    			}
+		    		}
 	    		}
 	    	}
 			request.getSession().setAttribute("cart", cart);

@@ -1,16 +1,17 @@
 package com.javaminions.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.javaminions.pojos.Product;
 
 public class CategoryService {
-	public void searchProductByName(HttpServletRequest request, HttpServletResponse response, String searchInput, ArrayList<Product> products) {
-		HttpSession session = request.getSession();
+	public void searchProductByName(HttpServletRequest request, HttpServletResponse response, List<Product> products) {
+		
+		String searchInput = request.getParameter("searchInput");
 
 		ArrayList<Product> filteredProducts = new ArrayList<Product>();
 		if (searchInput != null && searchInput != "") {
@@ -19,7 +20,7 @@ public class CategoryService {
 					filteredProducts.add(p);
 				}
 			}
-			session.setAttribute("filteredProducts", filteredProducts);
+			request.getSession().setAttribute("filteredProducts", filteredProducts);
 			request.setAttribute("isProductsFiltered", "yes");
 			request.setAttribute("filter", searchInput);
 		}
