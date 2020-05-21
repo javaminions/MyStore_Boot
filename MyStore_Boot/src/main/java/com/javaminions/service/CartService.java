@@ -161,6 +161,7 @@ public class CartService {
 			if(c.getName().contains("cartprod")) {
 				c.setMaxAge(0);
 				c.setPath("/");
+				response.addCookie(c);
 			}
 		}
 		ArrayList<LineItem> lineItems = cart.getLineItems();

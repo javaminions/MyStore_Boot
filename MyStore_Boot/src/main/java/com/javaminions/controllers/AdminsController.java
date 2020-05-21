@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.javaminions.pojos.UserProfile;
 import com.javaminions.repo.ProductRepo;
+import com.javaminions.repo.UserProfileRepo;
 import com.javaminions.service.ProductsService;
 
 @Controller
@@ -19,12 +20,13 @@ public class AdminsController {
 	@Autowired
 	ProductRepo prepo;
 	
+	
 	@GetMapping("/adminpage")
 	public String adminPage(HttpServletRequest request, HttpServletResponse response) {
 		
 		UserProfile user = (UserProfile) request.getSession().getAttribute("user");
 		
-		if (user.isAdmin == true) {
+		if (user!=null && user.isAdmin == true) {
 			return "Admins";
 		} else {
 			return "home";
