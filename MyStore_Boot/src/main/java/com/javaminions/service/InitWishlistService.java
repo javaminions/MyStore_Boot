@@ -24,6 +24,7 @@ public class InitWishlistService {
 				if (user.getId() == w.getUser_id()) {
 					for (Product p : prods) {
 						if (w.getProduct_code() == Integer.parseInt(p.getCode())) {
+							System.out.println("added a product to local obj");
 							wh.addProduct(p);
 						}
 					}
@@ -31,7 +32,9 @@ public class InitWishlistService {
 			}
 			session.setAttribute("wishlist", wh);
 		}
-
+		else {
+			System.out.println("wishlist aint null, ts : " + session.getAttribute("wishlist"));
+		}
 	}
 
 }

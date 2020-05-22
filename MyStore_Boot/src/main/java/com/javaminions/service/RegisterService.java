@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.javaminions.database.Database;
+import com.javaminions.model.WishlistHandler;
 import com.javaminions.pojos.UserProfile;
+import com.javaminions.pojos.Wishlist;
 import com.javaminions.repo.UserProfileRepo;
 
 public class RegisterService {
@@ -21,6 +23,7 @@ public void registerUser (HttpServletRequest request, HttpServletResponse respon
 		HttpSession session = request.getSession();
 		UserProfile user = new UserProfile(userName, password, firstName, lastName, email, false);
 		session.setAttribute("user", user);
+		session.setAttribute("wishlistProducts", new WishlistHandler().getWishProducts());
 		
 		//UserName Cookie
 		session.setAttribute("userName", userName);
