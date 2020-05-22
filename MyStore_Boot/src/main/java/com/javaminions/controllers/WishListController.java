@@ -35,11 +35,13 @@ public class WishListController {
 		WishlistHandler wishlist = (WishlistHandler) request.getSession().getAttribute("wishlist");
 		
 		WishlistHandler emptyWish = new WishlistHandler();
-		emptyWish.addProduct(new Product());
+		System.out.println("WishListController Signedin=="+signedin);
 		if (signedin == null || signedin.equalsIgnoreCase("no")) {
 			return "signin";
+		} else if(wishlist==null){
+			session.setAttribute("wishlistProducts", emptyWish.getWishProducts());
 		} else {
-				session.setAttribute("wishlistProducts", wishlist.getWishProducts());
+			session.setAttribute("wishlistProducts", wishlist.getWishProducts());
 		}
 		return "WishList";
 	}
@@ -52,6 +54,9 @@ public class WishListController {
 		HttpSession session = request.getSession();
 		String signedin = (String) request.getSession().getAttribute("signedin");
 		WishlistHandler wishlistHandler = (WishlistHandler) request.getSession().getAttribute("wishlist");
+		if(wishlistHandler==null) {
+			wishlistHandler = new WishlistHandler();
+		}
 		if (signedin == null || signedin.equalsIgnoreCase("no")) {
 			return "signin";
 		} else {
