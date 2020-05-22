@@ -36,6 +36,7 @@ public class WishListController {
 		if (signedin == null || signedin.equalsIgnoreCase("no")) {
 			return "signin";
 		} else {
+			if(session.getAttribute("wishlistProducts") != null)
 			session.setAttribute("wishlistProducts", wishlist.getWishProducts());
 		}
 		return "WishList";
