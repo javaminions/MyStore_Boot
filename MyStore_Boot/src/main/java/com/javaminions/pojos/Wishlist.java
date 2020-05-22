@@ -1,5 +1,6 @@
 package com.javaminions.pojos;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,7 +10,8 @@ import javax.persistence.Id;
 public class Wishlist {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private int user_id;
 	private int product_code;
@@ -34,9 +36,8 @@ public class Wishlist {
 	public void setProduct_code(int product_code) {
 		this.product_code = product_code;
 	}
-	public Wishlist(int id, int user_id, int product_code) {
+	public Wishlist(int user_id, int product_code) {
 		super();
-		this.id = id;
 		this.user_id = user_id;
 		this.product_code = product_code;
 	}

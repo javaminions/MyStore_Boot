@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.javaminions.database.Database;
 import com.javaminions.pojos.Product;
 import com.javaminions.pojos.UserProfile;
 import com.javaminions.pojos.Wishlist;
@@ -17,18 +18,20 @@ import com.javaminions.repo.UserProfileRepo;
 
 public class SignInService {
 
-	public void signInUser (HttpServletRequest request, HttpServletResponse response, String userName, String password, UserProfileRepo userProfile, List<Wishlist> wishlist, List<Product> prods) throws ServletException, IOException, SQLException, ClassNotFoundException {		
+	public void signInUser (HttpServletRequest request, HttpServletResponse response, String userName, String password, UserProfileRepo users, List<Wishlist> wishlist, List<Product> prods) throws ServletException, IOException, SQLException, ClassNotFoundException {		
 		System.out.println("sign in called");
 		String message= "";
 		
 		HttpSession session = request.getSession();
+		List<UserProfile> theUsers = (List<UserProfile>) users.findAll(); 
 		UserProfile user = new UserProfile();
 		user.setFirstName("");
 
 //		Database database = Database.getInstance();
-		List<UserProfile> users = (List<UserProfile>) userProfile.findAll();
-		for(UserProfile u:users) {
+		//List<UserProfile> users = (List<UserProfile>) userProfile.findAll();
+		for(UserProfile u:theUsers) {
 			if(u.getUsername().equalsIgnoreCase(userName)) {
+				System.out.println();
 				user = u;
 				new InitWishlistService().generateWishlist(request, response, wishlist, user, prods);
 			}

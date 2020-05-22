@@ -42,15 +42,13 @@ public class InitController {
 			List<UserProfile> users = (List<UserProfile>) userP.findAll();
 			List<Wishlist> wishList = (List<Wishlist>) wishs.findAll();
 			
-			
 			new InitPageService().pageInitializer(request, response, prods, users, wishList);
 			String caroSelection = request.getParameter("caroSelection");
 //			System.out.println(caroSelection);
 			if(caroSelection!=null) {
 				new CarouselService().caroHandler(caroSelection, request, response);
 			}
-		
-			
+
 		} catch (ServletException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
