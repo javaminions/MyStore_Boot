@@ -91,16 +91,21 @@ public class WishListController {
 	public String wishlistDelete(@RequestParam String prodcode, HttpServletRequest request,
 			HttpServletResponse response) {
 
+		// get products from db
 		List<Product> prods = (List<Product>) prod.findAll();
 
 		HttpSession session = request.getSession();
 		String signedin = (String) request.getSession().getAttribute("signedin");
 		WishlistHandler wishlistHandler = (WishlistHandler) request.getSession().getAttribute("wishlist");
+	
+		// get all wishlists from db
 		List<Wishlist> theWishs = (List<Wishlist>) wishs.findAll();
+		
+		// if not signed in, redirect to sign in page
 		if (signedin == null || signedin.equalsIgnoreCase("no")) {
 			return "signin";
 		} else {
-
+			// otherwise, loop through and delete in both db and local object
 			for (Wishlist w : theWishs) {
 				if (w.getProduct_code() == Integer.parseInt(prodcode)) {
 					wishs.delete(w);
