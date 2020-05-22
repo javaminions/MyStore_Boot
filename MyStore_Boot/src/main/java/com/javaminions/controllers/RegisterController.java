@@ -12,7 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.javaminions.repo.ProductRepo;
 import com.javaminions.repo.UserProfileRepo;
+import com.javaminions.repo.WishlistRepo;
 import com.javaminions.service.RegisterService;
 
 
@@ -22,6 +24,12 @@ public class RegisterController {
 	@Autowired
 	UserProfileRepo userProfile;
 	
+	@Autowired
+	WishlistRepo wishs;
+	
+	@Autowired
+	ProductRepo prod;
+	
 	@PostMapping("registerUser")
 	public void signInUser(@RequestParam String userName, @RequestParam String password, @RequestParam String email, @RequestParam String firstName, @RequestParam String lastName, HttpServletRequest request,
 			HttpServletResponse response) {
@@ -30,7 +38,7 @@ public class RegisterController {
 		
 		try {
 			
-			new RegisterService().registerUser(request, response, userName, password, email, firstName, lastName, userProfile);
+			new RegisterService().registerUser(request, response, userName, password, email, firstName, lastName, userProfile, prod, wishs);
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

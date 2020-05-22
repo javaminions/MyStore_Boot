@@ -56,6 +56,7 @@ public class WishListController {
 		WishlistHandler wishlistHandler = (WishlistHandler) request.getSession().getAttribute("wishlist");
 		if(wishlistHandler==null) {
 			wishlistHandler = new WishlistHandler();
+
 		}
 		if (signedin == null || signedin.equalsIgnoreCase("no")) {
 			return "signin";
