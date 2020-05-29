@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>All Orders</title>
 </head>
 <body>
-
+<%@ include file="/views/navbar.jsp" %>
+<%@ include file="/views/adminOrderHistory.jsp" %>
+<%@ include file="/views/Footer.html" %>
 </body>
 </html>
