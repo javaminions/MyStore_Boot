@@ -48,6 +48,7 @@ public class SignInService {
 			//set Session Attribute & Make Cookies!
 			session.setAttribute("user", user);
 			session.setAttribute("signedin", "yes");
+			session.setAttribute("isAdmin", user.isAdmin());
 			
 			//UserName Cookie
 			Cookie unc = new Cookie("userNameCookie", user.getUsername());

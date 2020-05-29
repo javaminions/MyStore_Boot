@@ -54,6 +54,7 @@ public class InitPageService {
 		}
 		
 		session.setAttribute("user", user);
+		session.setAttribute("isAdmin", user.isAdmin());
 
 		// if not signed in set cart to 0 and set signedin to no
 		if (signedin == false) {

@@ -20,13 +20,23 @@ public class AdminsController {
 	@Autowired
 	ProductRepo prepo;
 	
+	@GetMapping("/fulfillment")
+	public String fulfillmentPage () {
+		return "fulfillments";
+	}
+	
+	@GetMapping("/adminOrderHistory")
+	public String getOrderHistory () {
+		return "adminorderhistory";
+	}
+	
 	
 	@GetMapping("/adminpage")
 	public String adminPage(HttpServletRequest request, HttpServletResponse response) {
 		
 		UserProfile user = (UserProfile) request.getSession().getAttribute("user");
 		
-		if (user!=null && user.isAdmin == true) {
+		if (user!=null && user.isAdmin() == true) {
 			return "Admins";
 		} else {
 			return "home";
@@ -48,5 +58,7 @@ public class AdminsController {
 		
 		return "Admins";
 	}
+	
+	
 
 }

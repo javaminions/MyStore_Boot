@@ -33,12 +33,6 @@ public class UserProfile {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	private String firstName;
-	private String lastName;
-	private String username;
-	private String password;
-	private String email;
 	
 	public boolean isAdmin() {
 		return isAdmin;
@@ -48,7 +42,16 @@ public class UserProfile {
 		this.isAdmin = isAdmin;
 	}
 
-	public boolean isAdmin;
+
+	private String firstName;
+	private String lastName;
+	private String username;
+	private String password;
+	private String email;
+	private boolean isAdmin;
+	
+
+
 	
 	public UserProfile(int id, String username, String password, String firstName, String lastName, String email, Boolean isAdmin ) {
 		super();

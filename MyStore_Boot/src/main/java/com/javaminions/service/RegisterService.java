@@ -63,6 +63,9 @@ public void registerUser (HttpServletRequest request, HttpServletResponse respon
 		
 
 		userProfile.save(user);
+		//BC - testing if this attribute will work
+		session.setAttribute("isAdmin", user.isAdmin());
+		
 		ArrayList<Wishlist> theWishlists = (ArrayList<Wishlist>) wishs.findAll();
 		ArrayList<Product> theProds = (ArrayList<Product>) prods.findAll();
 		new InitWishlistService().generateWishlist(request, response, theWishlists, user, theProds);
