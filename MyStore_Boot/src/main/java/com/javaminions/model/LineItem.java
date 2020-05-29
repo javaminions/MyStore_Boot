@@ -1,5 +1,8 @@
 package com.javaminions.model;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import com.javaminions.pojos.Product;
 
 public class LineItem {
@@ -28,8 +31,14 @@ public class LineItem {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	public double getTotal() {
-		return (product.getPrice()*quantity);
+
+	
+	public String getTotal() {
+		double totall = 0;
+		totall = product.getPrice()*quantity;
+		return NumberFormat.getCurrencyInstance().format(totall);
 	}
+	
+	
 
 }

@@ -12,12 +12,9 @@
 <body>
 <%@ include file="/views/navbar.jsp" %>
 <div class="registrationContainer">
-
 <h2>Add a Product Here:</h2>
 
-
 <br><br><br>
-
 <div id="registration">
 <form action="addproduct" method="post">  
           
@@ -27,7 +24,7 @@
     <label class="pad_top">Name:</label>
     <input required type="text" name="name"><br><br>
     
-    <label class=pad_top">Description:</label>
+    <label class="pad_top">Description:</label>
     <input required type="text" name="description"><br><br>
     
     <label class="pad_top">Inventory:</label>
@@ -48,7 +45,6 @@
 </div>
 <br>
 </div>
-
 
 <%@ include file="/views/Footer.html" %>
 </body>
