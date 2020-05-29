@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,10 +20,10 @@ import com.javaminions.pojos.UserProfile;
 import com.javaminions.repo.OrderDetailsRepo;
 import com.javaminions.repo.OrdersRepo;
 import com.javaminions.repo.ProductRepo;
-import com.javaminions.repo.UserProfileRepo;
 import com.javaminions.service.AdminOrderHistoryService;
-import com.javaminions.service.DisplayOrdersService;
+import com.javaminions.service.FulfillmentService;
 import com.javaminions.service.ProductsService;
+
 
 @Controller
 public class AdminsController {
@@ -37,7 +38,10 @@ public class AdminsController {
 	ProductRepo prepo;
 	
 	@GetMapping("/fulfillment")
-	public String fulfillmentPage () {
+	public String fulfillmentPage (HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		
+		session.setAttribute("supplierOrders", new FulfillmentService().getOrderFulfillments()); 
 		return "fulfillments";
 	}
 	

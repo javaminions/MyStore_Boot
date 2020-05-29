@@ -9,86 +9,82 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product implements Serializable{
 
 	@Id
 	private String code;
-    private String name; 
+	
+    public Product(String code2, String name2, String description2, int inventory2, double price2, String category2,
+			String img2) {
+		
+	}
+    
+    public Product () {
+    	
+    }
+    
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public int getInventory() {
+		return inventory;
+	}
+	public void setInventory(int inventory) {
+		this.inventory = inventory;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
+	private String name; 
     private String description;
     private int inventory; 
     private double price;
     private String category; 
     private String img;
     
-    public Product() {
-    	
-    }
-    
-	
-
-	public Product(String code, String name, String description, int inventory, double price, String category,
-			String img) {
-		super();
-		this.code = code;
-		this.name = name;
-		this.description = description;
-		this.inventory = inventory;
-		this.price = price;
-		this.category = category;
-		this.img = img;
-	}
-	
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public void setInventory(int inventory) {
-		this.inventory = inventory;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public void setImg(String img) {
-		this.img = img;
-	}
-	
-	public String getCode() {
-		return code;
-	}
-	public String getName() {
-		return name;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public int getInventory() {
-		return inventory;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public String getCategory() {
-		return category;
-	}
-	public String getImg() {
-		return img;
-	}
-	public String getPriceCurrencyFormat() {
+    public String getPriceCurrencyFormat() {
         return NumberFormat.getCurrencyInstance(Locale.US).format(price);
     }
+    
+
+	
+
 }
