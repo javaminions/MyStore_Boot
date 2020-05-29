@@ -143,3 +143,9 @@ a.cart:hover {
 .status_out {
 	color: red !important;
 }
+
+.quantity{
+	align-content:center;
+	text-align: center;
+	margin-top: 20px;
+}
