@@ -18,7 +18,6 @@ public class OrderReceptionistRestController {
 	@RequestMapping("orderconfirmation/{id}/{quantity}")
 	@ResponseBody
 	public String confirmOrder(@PathVariable int id, @PathVariable int quantity) {
-		System.out.println("hit it");
 		return OrderReceptionistService.updateProductCount(p, id, quantity);
 	}
 

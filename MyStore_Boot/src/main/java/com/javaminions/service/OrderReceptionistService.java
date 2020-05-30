@@ -23,7 +23,6 @@ public class OrderReceptionistService {
 		
 		prod.setInventory(prod.getInventory()+quantity);
 		p.save(prod);
-		System.out.println("Updated product("+prod.getCode()+") with quantity="+quantity+" . Total quantity="+prod.getInventory());
 		return "Updated product("+prod.getCode()+") with quantity="+quantity+" . Total quantity="+prod.getInventory();
 	}
 	
