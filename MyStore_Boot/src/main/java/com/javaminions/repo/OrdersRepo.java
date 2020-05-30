@@ -1,9 +1,9 @@
 package com.javaminions.repo;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.javaminions.pojos.Orders;
 
-public interface OrdersRepo extends CrudRepository<Orders, Integer>{
+public interface OrdersRepo extends JpaRepository<Orders, Integer>{
 
 }

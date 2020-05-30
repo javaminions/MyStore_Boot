@@ -1,9 +1,9 @@
 package com.javaminions.repo;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.javaminions.pojos.Wishlist;
 
-public interface WishlistRepo extends CrudRepository<Wishlist, Integer>{
+public interface WishlistRepo extends JpaRepository<Wishlist, Integer>{
 
 }

@@ -5,14 +5,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Fulfillments</title>
 </head>
 <body>
+<%@ include file="/views/navbar.jsp" %>
 <h2>Welcome to fulfillments page</h2>
 <c:if test="${supplierOrders != null}">
 <c:forEach var="order" items="${supplierOrders}">
 	<p>${order.toString()}</p>	
 </c:forEach>
 </c:if>
+<%@ include file="/views/Footer.html" %>
 </body>
 </html>
