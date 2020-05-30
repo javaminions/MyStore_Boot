@@ -77,6 +77,12 @@ public class Product implements Serializable{
     public String getPriceCurrencyFormat() {
         return NumberFormat.getCurrencyInstance(Locale.US).format(price);
     }
+
+	@Override
+	public String toString() {
+		return "Product [code=" + code + ", name=" + name + ", description=" + description + ", inventory=" + inventory
+				+ ", price=" + price + ", category=" + category + ", img=" + img + "]";
+	}
     
 
 	

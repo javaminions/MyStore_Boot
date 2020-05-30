@@ -16,9 +16,11 @@ import com.javaminions.model.LineItem;
 import com.javaminions.pojos.UserProfile;
 import com.javaminions.repo.OrderDetailsRepo;
 import com.javaminions.repo.OrdersRepo;
+import com.javaminions.repo.ProductRepo;
 import com.javaminions.repo.UserProfileRepo;
 import com.javaminions.service.CreateOrder;
 import com.javaminions.service.OrderService;
+import com.javaminions.service.StockService;
 
 @Controller
 public class OrderController {
@@ -30,6 +32,9 @@ public class OrderController {
 	
 	@Autowired
 	OrderDetailsRepo odr;
+	
+	@Autowired
+	ProductRepo productRepo;
 
 	@GetMapping("/submitorder")
 	public String submitOrder(HttpServletRequest request, HttpServletResponse response) {
@@ -40,7 +45,8 @@ public class OrderController {
 		int orderid = order.getOrderId();
 		CartHandler cart = (CartHandler) request.getSession().getAttribute("cart");
 		ArrayList<LineItem> products = cart.getLineItems();
-		
+		System.out.println("??????????");
+		System.out.println(StockService.checkout(cart, productRepo));
 		try {
 			
 			new OrderService().submitOrder(request, response, orderid, products, odr, cart);
