@@ -140,14 +140,15 @@
 									class="fas fa-shopping-cart"></i> Add to Cart</a>
 							</div>
 									<c:if test="${user.isAdmin() == true}">
-								<form action="restock" method="post">  
+									<form action="restock" method="post">  
+								<input type="hidden" name="prodCode" id="prodCode" value="${product.code}">
 								<div class="row justify-content-end" style="margin-top: 5px">
 									<div class="col-sm-12">
 										<div class="input-group">
 											<input type="text" class="form-control"
 												placeholder="Quantity..." name="restockQuantity" id="restockQuantity">
 											<div class="input-group-append">
-											    <button required type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Restock</button>
+											    <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Restock</button>
 											</div>
 										</div>
 									</div>
@@ -225,13 +226,14 @@
 							</div>				
 								<c:if test="${user.isAdmin() == true}">
 								<form action="restock" method="post">  
+								<input type="hidden" name="prodCode" id="prodCode" value="${product.code}">
 								<div class="row justify-content-end" style="margin-top: 5px">
 									<div class="col-sm-12">
 										<div class="input-group">
 											<input type="text" class="form-control"
 												placeholder="Quantity..." name="restockQuantity" id="restockQuantity">
 											<div class="input-group-append">
-											    <button required type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Restock</button>
+											    <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Restock</button>
 											</div>
 										</div>
 									</div>
