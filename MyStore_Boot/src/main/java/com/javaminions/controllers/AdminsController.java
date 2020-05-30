@@ -1,7 +1,9 @@
 package com.javaminions.controllers;
 
+import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -20,8 +22,11 @@ import com.javaminions.pojos.UserProfile;
 import com.javaminions.repo.OrderDetailsRepo;
 import com.javaminions.repo.OrdersRepo;
 import com.javaminions.repo.ProductRepo;
+import com.javaminions.repo.UserProfileRepo;
+import com.javaminions.repo.WishlistRepo;
 import com.javaminions.service.AdminOrderHistoryService;
 import com.javaminions.service.FulfillmentService;
+import com.javaminions.service.InitPageService;
 import com.javaminions.service.ProductsService;
 
 
@@ -36,6 +41,12 @@ public class AdminsController {
 	
 	@Autowired
 	ProductRepo prepo;
+	
+	@Autowired
+	UserProfileRepo userRepo;
+	
+	@Autowired
+	WishlistRepo wishlistRepo;
 	
 	@GetMapping("/fulfillment")
 	public String fulfillmentPage (HttpServletRequest request) {
@@ -61,7 +72,9 @@ public class AdminsController {
 	
 	
 	@GetMapping("/adminpage")
-	public String adminPage(HttpServletRequest request, HttpServletResponse response) {
+	public String adminPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		new InitPageService().pageInitializer(request, response, prepo.findAll(), userRepo.findAll(), wishlistRepo.findAll());
 		
 		UserProfile user = (UserProfile) request.getSession().getAttribute("user");
 		

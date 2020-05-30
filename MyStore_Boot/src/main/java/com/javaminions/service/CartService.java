@@ -9,17 +9,26 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.web.bind.annotation.RequestParam;
-
 import com.javaminions.model.CartHandler;
 import com.javaminions.model.LineItem;
 import com.javaminions.pojos.Product;
+import com.javaminions.repo.ProductRepo;
 
 
 
 public class CartService {
 
-	public void addToCart(CartHandler cart, String prodcode, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void addToCart(ProductRepo products, CartHandler cart, String prodcode, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		List<Product> prods = products.findAll();
+		Product prodclone = new Product();
+		prodclone.setCode(prodcode);
+		
+		for (Product product : prods) {
+			if(product.getCode().equals(prodclone.getCode())) {
+				prodclone = product;
+			}
+		}
 		
 		String signedin = (String) request.getSession().getAttribute("signedin");
 		if(signedin==null || signedin.equalsIgnoreCase("no")) {
@@ -33,9 +42,8 @@ public class CartService {
 			cart = (CartHandler) request.getSession().getAttribute("cart");
 		}
 		
-		ArrayList<Product> products = (ArrayList<Product>) request.getSession().getAttribute("products");
 		Product productToAdd = null;
-		for(Product product: products) {
+		for(Product product: prods) {
 			if(product.getCode().equalsIgnoreCase(prodcode)) {
 				productToAdd = product;
 			} else {
@@ -66,8 +74,12 @@ public class CartService {
 			boolean exists = false; 
 			for(LineItem lineItem: lineItems) {
 				if(lineItem.getProduct().getCode().equalsIgnoreCase(prodcode)) {
-					lineItem.setQuantity(lineItem.getQuantity()+1);
-					exists = true; 
+					if(lineItem.getQuantity()==prodclone.getInventory()) {
+						return;
+					} else {
+						lineItem.setQuantity(lineItem.getQuantity()+1);
+						exists = true;
+					} 
 				}
 			}
 			if(!exists) {
@@ -95,16 +107,28 @@ public class CartService {
 	}
 	
 	
-	public void updateCount(String action, String prodcode, CartHandler cart, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void updateCount(ProductRepo products, String action, String prodcode, CartHandler cart, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		if(action.equalsIgnoreCase("plus")) {
-			System.out.println("action is plus method");
-			System.out.println("prodcode is" + prodcode);
+			
 			ArrayList<LineItem> lineItems = cart.getLineItems();
+			
+			//verify that there is enough stock 
+			List<Product> prods = products.findAll();
+			Product product = new Product();
+			for (Product p : prods) {
+				if(p.getCode().equals(prodcode)) {
+					product = p;
+				}
+			}
+			
 			for(LineItem lineItem: lineItems) {
 				if(lineItem.getProduct().getCode().equalsIgnoreCase(prodcode)) {
-					lineItem.setQuantity(lineItem.getQuantity()+1);
-					System.out.println(prodcode);
+					if(lineItem.getQuantity()==product.getInventory()) {
+						return;
+					} else {
+						lineItem.setQuantity(lineItem.getQuantity()+1);
+					}
 				}
 				
 			}

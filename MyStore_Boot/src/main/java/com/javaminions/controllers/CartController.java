@@ -12,11 +12,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.javaminions.model.CartHandler;
-import com.javaminions.repo.CartRepo;
+import com.javaminions.repo.ProductRepo;
 import com.javaminions.service.CartService;
 
 @Controller
 public class CartController {
+	
+	@Autowired
+	ProductRepo products;
 	
 	@GetMapping("Cart")
 	public String categories(HttpServletResponse response, HttpServletRequest request) {
@@ -72,7 +75,7 @@ public class CartController {
 		
 		try {
 			
-			new CartService().addToCart(cart, prodcode, request, response);
+			new CartService().addToCart(products, cart, prodcode, request, response);
 			
 		} catch (ServletException e) {
 			e.printStackTrace();
@@ -101,7 +104,7 @@ public class CartController {
 		
 		try {
 			
-			new CartService().updateCount(action, prodcode, cart, request, response);
+			new CartService().updateCount(products, action, prodcode, cart, request, response);
 			
 		} catch (ServletException | IOException e) {
 			e.printStackTrace();
