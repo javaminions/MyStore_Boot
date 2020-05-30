@@ -49,7 +49,7 @@ public class CategoryController {
 		System.out.println(supplierResponse.getBody());
 		
 		if(supplierResponse.getStatusCode() == HttpStatus.OK) {
-			new FulfillmentService().restockProductInventory(prods, prodCode, restockQuantity);
+			//new FulfillmentService().restockProductInventory(prods, prodCode, restockQuantity);
 		}
 
 		return "categories";
