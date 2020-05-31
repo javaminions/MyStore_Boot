@@ -22,7 +22,7 @@
 		<c:if test="${wishlistProducts != null}">
 			<c:forEach var="product" items="${wishlistProducts}">
 				<c:choose>
-					<c:when test="${product.inventory=='0'}">
+					<c:when test="${product.inventory=='0' || product.inventory==null}">
 						<c:set var="stock" scope="session" value="Out of stock" />
 						<c:set var="theColor" scope="session"
 							value="color: red !important;" />

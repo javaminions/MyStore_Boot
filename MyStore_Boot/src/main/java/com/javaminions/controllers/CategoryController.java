@@ -50,7 +50,7 @@ public class CategoryController {
 				//not a number
 				return "categories";
 			}
-			if(quantity==0) {
+			if(quantity>0) {
 				System.out.println("prod code: " + prodCode);
 				System.out.println("restock quantity: " + restockQuantity);
 				HttpSession session = request.getSession();
