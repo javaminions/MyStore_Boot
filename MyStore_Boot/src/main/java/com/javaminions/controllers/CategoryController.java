@@ -40,12 +40,14 @@ public class CategoryController {
 	public String searchName(HttpServletRequest request, @RequestParam String prodCode, @RequestParam String restockQuantity) {
 
 		if(restockQuantity.isEmpty()) {
+			//nothing entered 
 			return "categories";
 		} else {
 			int quantity = 0;
 			try {
 				quantity = Integer.parseInt(restockQuantity);
 			} catch(NumberFormatException e) {
+				//not a number
 				return "categories";
 			}
 			if(quantity==0) {
