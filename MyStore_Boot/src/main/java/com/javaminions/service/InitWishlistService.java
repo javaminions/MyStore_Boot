@@ -18,23 +18,25 @@ public class InitWishlistService {
 
 		HttpSession session = request.getSession();
 		WishlistHandler wh = new WishlistHandler();
-
-		if (session.getAttribute("wishlist") == null) {
-			for (Wishlist w : wishlist) {
-				if (user.getId() == w.getUser_id()) {
-					for (Product p : prods) {
-						if (w.getProduct_code() == Integer.parseInt(p.getCode())) {
-							System.out.println("added a product to local obj");
-							wh.addProduct(p);
-						}
+		
+		for (Wishlist w : wishlist) {
+			if (user.getId() == w.getUser_id()) {
+				for (Product p : prods) {
+					if (w.getProduct_code() == Integer.parseInt(p.getCode())) {
+						System.out.println("added a product to local obj");
+						wh.addProduct(p);
 					}
 				}
 			}
-			session.setAttribute("wishlist", wh);
 		}
-		else {
-			System.out.println("wishlist aint null, ts : " + session.getAttribute("wishlist"));
-		}
+		session.setAttribute("wishlist", wh);
+//		if (session.getAttribute("wishlist") == null) {
+//			
+//			
+//		}
+//		else {
+//			System.out.println("wishlist aint null, ts : " + session.getAttribute("wishlist"));
+//		}
 	}
 
 }

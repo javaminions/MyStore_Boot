@@ -1,5 +1,6 @@
 package com.javaminions.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +18,7 @@ import com.javaminions.pojos.UserProfile;
 import com.javaminions.pojos.Wishlist;
 import com.javaminions.repo.ProductRepo;
 import com.javaminions.repo.WishlistRepo;
+import com.javaminions.service.InitWishlistService;
 
 @Controller
 public class WishListController {
@@ -33,6 +35,7 @@ public class WishListController {
 		HttpSession session = request.getSession();
 		String signedin = (String) request.getSession().getAttribute("signedin");
 		WishlistHandler wishlist = (WishlistHandler) request.getSession().getAttribute("wishlist");
+		UserProfile user = (UserProfile) request.getSession().getAttribute("user");
 		
 		WishlistHandler emptyWish = new WishlistHandler();
 		System.out.println("WishListController Signedin=="+signedin);
@@ -41,6 +44,8 @@ public class WishListController {
 		} else if(wishlist==null){
 			session.setAttribute("wishlistProducts", emptyWish.getWishProducts());
 		} else {
+			new InitWishlistService().generateWishlist(request, response, wishs.findAll(), user, prod.findAll());
+			wishlist = (WishlistHandler) request.getSession().getAttribute("wishlist");
 			session.setAttribute("wishlistProducts", wishlist.getWishProducts());
 		}
 		return "WishList";
