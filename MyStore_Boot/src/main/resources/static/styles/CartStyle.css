@@ -3,7 +3,7 @@
   width: 80%;
   height: auto;
   background-color: rgb(0, 115, 166);
-  color: white;
+  color: black;
   padding: 10px;
   margin: auto;
   border-radius: 20px;
@@ -20,7 +20,7 @@
   margin-left: 0px;
   margin-top: 1%;
   border: 0.5px solid white;
-  background-color: rgb(98, 191, 75);
+  background-color: white;
 }
 
 .item-image {
@@ -100,7 +100,7 @@
   margin: auto;
   margin-top: 1%;
   border: 0.5px solid white;
-  background-color: rgb(98, 191, 75);
+  background-color: #ffffff;
 }
 .total div {
   display: inline-block;

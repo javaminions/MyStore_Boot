@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="styles/CartStyle.css">
 </head>
 <body>
-	<h2>Shopping Cart</h2>
+	<h2>Cart</h2>
 	<br>
 	<div class="Cart">
 

@@ -34,9 +34,9 @@ public class LineItem {
 
 	
 	public String getTotal() {
-		double totall = 0;
-		totall = product.getPrice()*quantity;
-		return NumberFormat.getCurrencyInstance().format(totall);
+		double total = 0;
+		total = product.getPrice()*quantity;
+		return NumberFormat.getCurrencyInstance().format(total);
 	}
 	
 	

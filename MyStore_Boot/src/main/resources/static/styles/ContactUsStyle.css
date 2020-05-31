@@ -3,7 +3,7 @@
   height: auto;
   margin: auto;
   text-align: left;
-  margin-top: 10%;
+  margin-top: 5%;
 
 }
 
@@ -15,10 +15,35 @@
 
 .title {
   padding: 10px;
+  
+}
+
+.welcome {
+	color: black;
 }
 
 .con {
-	text-align: center;
-	margin-top: 0;
+  line-height: 1.5;
+  display: inline-block;
+  font-size: 36px;
+  color: #0060a9;
+  font-weight: normal;
+  margin-bottom: 0;
 }
 
+.required
+{
+    color: red;
+}
+
+.bu {
+  background-color: #325c82; 
+  border: none;
+  color: white;
+  font-size: 1.125em;
+  padding: 5px 10px 5px 10px;
+  border: 0;
+  font-weight: 800;
+  height: 40px;
+  letter-spacing: 1.1px;
+}
