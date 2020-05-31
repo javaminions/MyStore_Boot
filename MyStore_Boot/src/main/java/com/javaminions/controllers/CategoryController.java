@@ -37,21 +37,23 @@ public class CategoryController {
 	}
 	
 	@PostMapping("/restock")
-	public String searchName(HttpServletRequest request, @RequestParam String prodCode, @RequestParam int restockQuantity) {
+	public String searchName(HttpServletRequest request, @RequestParam String prodCode, @RequestParam String restockQuantity) {
 
-		System.out.println("prod code: " + prodCode);
-		System.out.println("restock quantity: " + restockQuantity);
-		HttpSession session = request.getSession();
-		request.setAttribute("sentRequest", true);
-		
-		ResponseEntity<String> supplierResponse = new FulfillmentService().makeFulfillmentRequest(prodCode, restockQuantity);
-		session.setAttribute("supplierRestockResponse", supplierResponse);
-		System.out.println(supplierResponse.getBody());
-		
-		if(supplierResponse.getStatusCode() == HttpStatus.OK) {
-			//new FulfillmentService().restockProductInventory(prods, prodCode, restockQuantity);
+		if(restockQuantity.isEmpty()) {
+			return "categories";
+		} else {
+			int quantity = Integer.parseInt(restockQuantity);
+			if(quantity==0) {
+				System.out.println("prod code: " + prodCode);
+				System.out.println("restock quantity: " + restockQuantity);
+				HttpSession session = request.getSession();
+				request.setAttribute("sentRequest", true);
+				
+				ResponseEntity<String> supplierResponse = new FulfillmentService().makeFulfillmentRequest(prodCode, quantity);
+				session.setAttribute("supplierRestockResponse", supplierResponse);
+				System.out.println(supplierResponse.getBody());
+			}
 		}
-
 		return "categories";
 	}
 }
