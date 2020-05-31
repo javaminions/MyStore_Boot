@@ -42,7 +42,12 @@ public class CategoryController {
 		if(restockQuantity.isEmpty()) {
 			return "categories";
 		} else {
-			int quantity = Integer.parseInt(restockQuantity);
+			int quantity = 0;
+			try {
+				quantity = Integer.parseInt(restockQuantity);
+			} catch(NumberFormatException e) {
+				return "categories";
+			}
 			if(quantity==0) {
 				System.out.println("prod code: " + prodCode);
 				System.out.println("restock quantity: " + restockQuantity);
