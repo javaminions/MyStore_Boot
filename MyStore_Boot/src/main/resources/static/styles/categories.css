@@ -149,3 +149,25 @@ a.cart:hover {
 	text-align: center;
 	margin-top: 20px;
 }
+
+.cardFooterText{
+	font-size: 8px;
+	color: red; 
+}
+
+#orderStatus {
+	text-decoration: none; 
+	color: white;
+}
+
+
+#theIcon {
+	  color: white;
+	  display: inline-block;
+}
+
+#orderStatus:hover > #theIcon { 
+	color: lightgrey;
+    transform: rotate(360deg);
+    transition: 0.4s;
+ }

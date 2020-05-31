@@ -16,6 +16,7 @@
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="styles/categories.css">
+<link rel="stylesheet" href="styles/snackbar.css">
 </head>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -29,6 +30,19 @@
 			filterSelection(category);
 		} else {
 			filterSelection("all");
+		}
+		
+		function myFunction() {
+			  var x = document.getElementById("snackbar");
+			  x.className = "show";
+			  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+			}
+
+		var supplyResponse = '${supplierRestockResponse}'; 
+
+		if(supplyResponse != null && supplyResponse != "") {
+			console.log(supplyResponse);
+			myFunction(); 
 		}
 	});
 </script>
@@ -148,7 +162,7 @@
 											<input type="text" class="form-control"
 												placeholder="Quantity..." name="restockQuantity" id="restockQuantity">
 											<div class="input-group-append">
-											    <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Restock</button>
+											    <button type="submit" onclick="myFunction()" class="btn btn-primary"><i class="fas fa-plus"></i> Restock</button>
 											</div>
 										</div>
 									</div>
@@ -231,9 +245,9 @@
 									<div class="col-sm-12">
 										<div class="input-group">
 											<input type="text" class="form-control"
-												placeholder="Quantity..." name="restockQuantity" id="restockQuantity">
+												placeholder="Quantity..." name="restockQuantity">
 											<div class="input-group-append">
-											    <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Restock</button>
+											    <button type="submit" onclick="myFunction()" class="btn btn-primary"><i class="fas fa-plus"></i> Restock</button>
 											</div>
 										</div>
 									</div>
@@ -245,6 +259,7 @@
 				</div>
 			</c:forEach>
 		</c:if>
+			<div id="snackbar"><a href="fulfillment" id="orderStatus">Request sent! ${supplierRestockResponse}  <span id="theIcon"><i class="fas fa-angle-double-right"></i></span></a></div>
 	</div>
 
 	<script

@@ -54,10 +54,9 @@ public class CategoryController {
 				System.out.println("prod code: " + prodCode);
 				System.out.println("restock quantity: " + restockQuantity);
 				HttpSession session = request.getSession();
-				request.setAttribute("sentRequest", true);
 				
 				ResponseEntity<String> supplierResponse = new FulfillmentService().makeFulfillmentRequest(prodCode, quantity);
-				session.setAttribute("supplierRestockResponse", supplierResponse);
+				request.setAttribute("supplierRestockResponse", supplierResponse.getBody());
 				System.out.println(supplierResponse.getBody());
 			}
 		}
