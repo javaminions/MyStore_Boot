@@ -18,7 +18,11 @@ public class CartHandler {
 		return lineItems;
 	}
 	public int getItemCount() {
-		return lineItems.size();
+		int count = 0;
+		for(LineItem lineitem: lineItems ) {
+			count += lineitem.getQuantity();
+		}
+		return count;
 	}
 	public void setCart(ArrayList<LineItem> lineItems) {
 		this.lineItems = lineItems;
