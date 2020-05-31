@@ -11,18 +11,17 @@ import com.javaminions.repo.ProductRepo;
 public class StockService {
 	
 	public static String checkout(CartHandler cart, ProductRepo products) {
-		System.out.println("you hit me ! >:(");
 		for(LineItem lineItem: cart.getLineItems()) {
 			Product prod = new Product();
 			
 			for(Product p:products.findAll()) {
-				if(p.getCode().equals(prod.getCode())) {
+				if(p.getCode().equals(lineItem.getProduct().getCode())) {
 					prod=p;
 				}
 			}
 			prod.setInventory(prod.getInventory()-lineItem.getQuantity());
-			products.save(prod);
 			System.out.println("Saved product:"+prod.toString());
+			products.save(prod);
 			
 		}
 		return "processed checkout";

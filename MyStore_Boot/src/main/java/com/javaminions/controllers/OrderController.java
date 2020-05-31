@@ -45,7 +45,6 @@ public class OrderController {
 		int orderid = order.getOrderId();
 		CartHandler cart = (CartHandler) request.getSession().getAttribute("cart");
 		ArrayList<LineItem> products = cart.getLineItems();
-		System.out.println("??????????");
 		System.out.println(StockService.checkout(cart, productRepo));
 		try {
 			
