@@ -33,37 +33,8 @@
 	});
 </script>
 <body>
-
-	<div class="top">
-		<a href="/"><img alt="Costco Logo"
-			src="https://javaminions.github.io/images/BossCo.png"
-			style="width: 20%; height: auto;"></a>
-	</div>
-
-	<h2 style="text-align: center">Products</h2>
-	<div class="container">
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark bg-white">
-			<form class="form-inline" action="categories" method="post">
-				<div class="wrap">
-					<a href="/" class="homeButton"><i class="fas fa-home"></i></a>
-				</div>
-				<input type="hidden" name="hiddenSearch" value=""> <input
-					class="form-control mr-sm-2" style="margin-left: 50px;" type="text"
-					placeholder="Search" id="searchInput" name="searchInput">
-				<div class="wrap">
-					<!-- <button class="btn" style="color: white; background-color: rgb(0, 115, 166)" type="submit">Search</button> -->
-					<input class="btn fonts" type="submit" id="searchButton"
-						value="Search" class="button2">
-
-				</div>
-				<div class="wrap">
-					<a href="showall" class="cart"><i class="fas fa-shopping-cart"></i><span
-						class='badge badge-warning' id='lblCartCount'>${cartCount}</span></a>
-				</div>
-			</form>
-		</nav>
-	</div>
-	<br>
+<%@ include file="/views/navbar.jsp" %>
+	
 
 	<div id="myBtnContainer">
 		<button href="categories" class="btn fonts active"
@@ -257,5 +228,7 @@
 		crossorigin="anonymous"></script>
 	<script src="scripts/categories.js"></script>
 	<script src="scripts/cart.js"></script>
+	
+<%@ include file="/views/Footer.html" %>
 </body>
 </html>
