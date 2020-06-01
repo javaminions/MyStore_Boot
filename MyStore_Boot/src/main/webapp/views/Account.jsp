@@ -16,28 +16,29 @@
 <h2>Update your info here</h2>
 
 
-<br><br><br>
+<br>
 
 <div id="registration">
 <form action="updateUser" method="post">  
           
-    <label class="pad_top">Email:</label>
+    <label class="pad_top">Email</label>
     <input required type="email" name="email" value="${user.email}"><br><br>
     
-    <label class="pad_top">First Name:</label>
+    <label class="pad_top">First Name</label>
     <input required type="text" name="firstName" value="${user.firstName}"><br><br>
     
-    <label class=pad_top">Last Name:</label>
+    <label class="pad_top">Last Name</label>
     <input required type="text" name="lastName" value="${user.lastName}"><br><br>
     
-    <label class="pad_top">Username:</label>
+    <label class="pad_top">Username</label>
     <input required type="text" name="username" value="${user.username}"><br><br>
     
-    <label class="pad_top">Password:</label>
+    <label class="pad_top">Password</label>
     <input required type="password" name="password"><br>
   
     <label>&nbsp;</label><br>
-    <input required type="submit" value="Update" class="margin_left">
+    <input required type="submit" value="Update" class="margin_left_update">
+     <label>&nbsp;</label><br>
 </form>
 </div>
 <br>

@@ -16,8 +16,8 @@ label {
 	font-weight: bold;
 }
 
-#blah {
-	max-width: 180px;
+#imageHolder {
+	max-width: 86%;
 }
 
 input[type=file] {
@@ -59,6 +59,18 @@ br {
 }
 
 .margin_left_sign {
+	padding: 10px 70px;
+	border-radius: 2px;
+	color: #fff;
+	border: none;
+	background-color: #3071a9;
+	cursor: pointer;
+	width: 86%;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.margin_left_update {
 	padding: 10px 70px;
 	border-radius: 2px;
 	color: #fff;
