@@ -19,6 +19,7 @@
 			<h1>WishList</h1>
 			<p>Your WishList items. Click add to cart and checkout !</p>
 		</div>
+		<div class="wishBody">
 		<c:if test="${wishlistProducts != null}">
 			<c:forEach var="product" items="${wishlistProducts}">
 				<c:choose>
@@ -35,19 +36,22 @@
 					</c:otherwise>
 				</c:choose>
 				<div class="card">
+					<div class="cardBody">
 					<a href="wishlistDelete?prodcode=${product.code}"
 						class="card-link text-danger d-flex justify-content-end"
 						style="padding: 10px 10px 0 0;"> <i class="fas fa-times"></i>
-					</a> <img src="${product.img}" alt="" style="width: 100%">
+					</a> <img src="${product.img}" alt="" class="cardImg">
 					<h1>${product.name}</h1>
 					<p class="price">${product.getPriceCurrencyFormat()}</p>
 					<p>${product.description}</p>
 					<a href="addtocart?action=addtocart&amp;prodcode=${product.code}"
 						class="btn btn-danger mt-3 cartButton ${disableButton}"><i
 						class="fas fa-shopping-cart"></i> Add to Cart</a>
+					</div>
 				</div>
 			</c:forEach>
 		</c:if>
+		</div>
 	</div>
 	<%@ include file="/views/Footer.html"%>
 </body>
