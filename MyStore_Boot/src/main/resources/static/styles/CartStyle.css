@@ -2,7 +2,7 @@
   display: block;
   width: 80%;
   height: auto;
-  background: linear-gradient(to bottom, #0073a6 0%, #0066ff 100%);
+  background-color: rgb(0, 115, 166);;
   color: black;
   padding: 10px;
   margin: auto;
@@ -72,7 +72,7 @@
     padding: 10px;
     background-color: white;
     color: black;
-    font-size: 20;
+    font-size: 16px;
 }
 
 .item-quantity a {
@@ -144,7 +144,7 @@
 }
 
 .checkout button{
-  padding: 10px 70px;
+    padding: 10px 70px;
     border-radius: 4px;
     color: #fff;
     border: none;
@@ -159,4 +159,30 @@
 .cart-name {
 	font-size: 36px;
 	 font-weight: bold;
+}
+
+.cart-order-number {
+	font-size: 20px;
+    color: white;
+	font-weight: 500;
+}
+
+.myorder {
+	font-weight: 500;
+}
+
+
+.return-item {
+	padding: 10px 70px;
+    border-radius: 2px;
+    color: #fff;
+    border: none;
+    background-color: rgb(0, 115, 166);
+    cursor: pointer;
+ 
+}
+
+.return-item:hover {
+	background-color: rgb(0, 115, 166);
+	color: black;
 }

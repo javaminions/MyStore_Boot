@@ -12,19 +12,19 @@
 <body>
 
 	<div class="orders">
-		<h2>All Orders</h2>
+		<h2>All Orders</h2><br>
 		<c:forEach items="${adminOrderHistory}" var="orderHistory">
 
 
 			<div class="Cart">
-				<span>${orderHistory.orderNumber}</span>
+				<span class="cart-order-number">Order Number ${orderHistory.orderNumber}</span>
 				<c:forEach items="${orderHistory.cart.getLineItems()}" var="item">
 					<div class="item">
 						<div class="item-image">
 							<img src="${item.product.img}" alt="">
 						</div>
 						<div class="item-info">
-							<span class="item-details" id="item-brand">${item.product.name}</span>
+							<span class="item-details" id="item-brand">${item.product.name}</span><br>
 							<span class="item-details" id="item-name">${item.product.description}</span>
 						</div>
 						<div class="item-quantity">
@@ -46,7 +46,9 @@
 					</div>
 				</div>
 			</div>
+			<br><br>
 		</c:forEach>
+		
 	</div>
 </body>
 

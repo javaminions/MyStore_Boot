@@ -12,25 +12,26 @@
 <body>
 
 	<div class="orders">
-		<h2>Your Orders</h2>
+		<h2 class="myorder">My Orders</h2><br>
 		<c:forEach items="${orderHistory}" var="orderHistory">
 
 
 			<div class="Cart">
-				<span>${orderHistory.orderNumber}</span>
+				<span class="cart-order-number">Order Number ${orderHistory.orderNumber}</span>
 				<c:forEach items="${orderHistory.cart.getLineItems()}" var="item">
 					<div class="item">
 						<div class="item-image">
 							<img src="${item.product.img}" alt="">
 						</div>
 						<div class="item-info">
-							<span class="item-details" id="item-brand">${item.product.name}</span>
+							<span class="item-details" id="item-brand">${item.product.name}</span><br>
 							<span class="item-details" id="item-name">${item.product.description}</span>
 						</div>
 						<div class="item-quantity">
 							<span class="item-quantity-int">${item.quantity}</span>
 						</div>
 						<div class="item-price">${item.total}</div>
+						<a href="returnitem" class="return-item">Return Items</a>
 						
 					</div>
 				</c:forEach>
@@ -39,14 +40,16 @@
 
 				<div class="total">
 					<div class="total-items">
-						<span>Total Items: </span> <span id="total-items">${orderHistory.cart.getItemCount()}</span>
+						<span>Total Item(s): </span> <span id="total-items">${orderHistory.cart.getItemCount()}</span>
 					</div>
-					<div class="total-cost">
+					<div class="total-cost-order">
 						<span>Total:</span> <span id="total-cost">${orderHistory.cart.getTotalCost()}</span>
 					</div>
 				</div>
 			</div>
+			<br><br>
 		</c:forEach>
+		
 	</div>
 </body>
 

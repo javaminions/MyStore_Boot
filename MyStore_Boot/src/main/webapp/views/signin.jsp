@@ -13,18 +13,19 @@
 <%@ include file="/views/navbar.jsp" %>
 <div class="registrationContainer">
 <div class="message">${message}<br></div>
-<h1>Have an account already?</h1>
-<h2>Sign in below!</h2>
+<h1>Sign In</h1>
 
 
-<br><br><br>
+
+<br>
 
 <div id="registration">
+<h4>Sign in to access your Bossco.com account.</h4>
 <form action="signInUser" method="post" id="login">       
-    <label class="pad_top">Username:</label>
+    <label class="pad_top">Username</label><br>
     <input required type="text" name="userName"><br><br>
      
-    <label class="pad_top">Password:</label>
+    <label class="pad_top">Password</label><br>
     <input required type="password" name="password"> <br> <br>
     <label>&nbsp;</label><br>
     <input required type="submit" value="Sign In" class="margin_left">

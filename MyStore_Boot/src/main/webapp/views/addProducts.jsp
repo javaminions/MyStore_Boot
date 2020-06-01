@@ -12,32 +12,32 @@
 <body>
 <%@ include file="/views/navbar.jsp" %>
 <div class="registrationContainer">
-<h2>Add a Product Here:</h2>
+<h2 class="add-product">Add a Product</h2>
 
 <br><br><br>
 <div id="registration">
 <form action="addproduct" method="post">  
           
-    <label class="pad_top">Code:</label>
+    <label class="pad_top_add">Code:</label>
     <input required type="text" name="code"><br><br>
     
-    <label class="pad_top">Name:</label>
+    <label class="pad_top_add">Name:</label>
     <input required type="text" name="name"><br><br>
     
-    <label class="pad_top">Description:</label>
+    <label class="pad_top_add">Description:</label>
     <input required type="text" name="description"><br><br>
     
-    <label class="pad_top">Inventory:</label>
+    <label class="pad_top_add">Inventory:</label>
     <input required type="text" name="inventory"><br><br>
     
-    <label class="pad_top">Price:</label>
-    <input required type="text" name="price"><br>
+    <label class="pad_top_add">Price:</label>
+    <input required type="text" name="price"><br><br>
     
-    <label class="pad_top">Category:</label>
-    <input required type="text" name="category"><br>
+    <label class="pad_top_add">Category:</label>
+    <input required type="text" name="category"><br><br>
     
-    <label class="pad_top">Img Link:</label>
-    <input required type="text" name="img"><br>
+    <label class="pad_top_add">Img Link:</label>
+    <input required type="text" name="img"><br><br>
     
     <label>&nbsp;</label><br>
     <input required type="submit" value="Add Product" class="margin_left">
