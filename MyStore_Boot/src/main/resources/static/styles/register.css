@@ -16,10 +16,7 @@ label {
 	font-weight: bold;
 }
 
-span {
-	margin-left: 2em;
-	margin-bottom: 0.5em;
-}
+
 
 br {
 	clear: both;
@@ -208,6 +205,7 @@ form input[type="text"]:valid, input[type="email"]:valid, input[type="password"]
 	height: 22px;
 	width: 20px;
 	background-color: #eee;
+	margin-left: 2em;
 }
 
 /* On mouse-over, add a grey background color */
