@@ -11,6 +11,7 @@ public class ProductsService {
 	public void addProduct (HttpServletRequest request, HttpServletResponse response, String code, String name, String description, int inventory, double price, String category, String img, ProductRepo prepo) {
 		
 		Product product = new Product (code, name, description, inventory, price, category, img);
+		System.out.println(product.toString());
 		prepo.save(product);
 		
 	}

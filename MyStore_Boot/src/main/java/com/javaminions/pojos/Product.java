@@ -15,13 +15,19 @@ public class Product implements Serializable{
 
 	@Id
 	private String code;
-	
-    public Product(String code2, String name2, String description2, int inventory2, double price2, String category2,
-			String img2) {
-		
+    public Product(String code, String name, String description, int inventory, double price, String category,
+			String img) {
+		super();
+		this.code = code;
+		this.name = name;
+		this.description = description;
+		this.inventory = inventory;
+		this.price = price;
+		this.category = category;
+		this.img = img;
 	}
-    
-    public Product () {
+
+	public Product () {
     	
     }
     

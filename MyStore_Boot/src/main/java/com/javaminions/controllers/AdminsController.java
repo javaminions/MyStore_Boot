@@ -1,5 +1,6 @@
 package com.javaminions.controllers;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -92,10 +93,10 @@ public class AdminsController {
 	}
 	
 	@PostMapping("/addproduct")
-	public String addProduct (HttpServletRequest request, HttpServletResponse response, @RequestParam String code, @RequestParam String name, @RequestParam String description, @RequestParam int inventory, @RequestParam double price, @RequestParam String category, @RequestParam String img) {
+	public String addProduct (HttpServletRequest request, HttpServletResponse response, @RequestParam String code, @RequestParam String name, @RequestParam String description, @RequestParam int inventory, @RequestParam double price, @RequestParam String category, @RequestParam String imgName) {
 		
 		
-		new ProductsService().addProduct(request, response, code, name, description, inventory, price, category, img, prepo);
+		new ProductsService().addProduct(request, response, code, name, description, inventory, price, category, imgName, prepo);
 		
 		
 		return "Admins";

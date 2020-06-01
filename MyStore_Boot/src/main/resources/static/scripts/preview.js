@@ -1,12 +1,7 @@
-  function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+(document).ready(function($) {
+	
+	$('#imgurl').bind('input', function() {
+	    $('#blah').attr('src', $(this).val()); //concatinate path if required
+	});
 
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result);
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
+});

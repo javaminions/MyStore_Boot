@@ -8,7 +8,17 @@
 <title>Register With Us</title>
 <link rel="stylesheet" href="styles/register.css" type="text/css"/>
  <script src="scripts/login.js" charset="utf-8"></script>
- <script src="scripts/preview.js" charset="utf-8"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+	<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		
+		$('#imgName').bind('input', function() {
+		    $('#imageHolder').attr('src', $(this).val()); //concatinate path if required
+		});
+
+	});
+	</script>
 </head>
 <body>
 <%@ include file="/views/navbar.jsp" %>
@@ -38,8 +48,8 @@
     <input required type="text" name="category"><br><br>
     
     <label class="pad_top_add">Img Link</label><br>
-    <input type='file' onchange="readURL(this);" />
-	<img id="blah" src="http://placehold.it/180" alt="your image" /><br>
+    <input type="text" name="imgName" id="imgName" placeholder="Input image name"><br><br>
+	<img name="imageHolder" id="imageHolder" src="http://i.imgur.com/zAyt4lX.jpg">
     
     <label>&nbsp;</label><br>
     <input required type="submit" value="Add Product" class="margin_left_addproduct">
