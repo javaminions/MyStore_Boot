@@ -27,15 +27,26 @@
      
     <label class="pad_top">Password</label><br>
     <input required type="password" name="password"> <br> <br>
+  
+    
+     <label class="container_yes">Remember Me
+  	<input type="checkbox">
+  	<span class="checkmark"></span>
+	</label>
+ 
+    <input required type="submit" value="Sign In" class="margin_left_sign">
     <label>&nbsp;</label><br>
-    <input required type="submit" value="Sign In" class="margin_left">
+    <a href="#" class="forgot">Forgot Password?</a>
+</form>
+<hr class="line">
+<p class="already">New to Bossco.com?</p>
+<form action="register" method="get">
+<input type="submit" value="Create Account" class="margin_left_signin">
+<label>&nbsp;</label><br>
 </form>
 </div>
-<br>
-<p>Don't have an account?</p>
-<form action="register" method="get">
-<input type="submit" value="Register" class="margin_left">
-</form>
+
+
 </div>
 
 

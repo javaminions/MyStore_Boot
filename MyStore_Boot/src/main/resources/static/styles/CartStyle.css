@@ -54,7 +54,7 @@
 
 .item-quantity {
   margin-left: 5%;
-  width: 25%;
+  width: 15%;
   display: inline-block;
 }
 .item-quantity button {
@@ -173,7 +173,7 @@
 
 
 .return-item {
-	padding: 10px 70px;
+	padding: 10px 30px;
     border-radius: 2px;
     color: #fff;
     border: none;

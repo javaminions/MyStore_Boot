@@ -14,29 +14,29 @@
 <div class="registrationContainer">
 <h2 class="add-product">Add a Product</h2>
 
-<br><br><br>
+<br>
 <div id="registration">
 <form action="addproduct" method="post">  
           
-    <label class="pad_top_add">Code:</label>
+    <label class="pad_top_add">Code</label>
     <input required type="text" name="code"><br><br>
     
-    <label class="pad_top_add">Name:</label>
+    <label class="pad_top_add">Name</label>
     <input required type="text" name="name"><br><br>
     
-    <label class="pad_top_add">Description:</label>
+    <label class="pad_top_add">Description</label>
     <input required type="text" name="description"><br><br>
     
-    <label class="pad_top_add">Inventory:</label>
+    <label class="pad_top_add">Inventory</label>
     <input required type="text" name="inventory"><br><br>
     
-    <label class="pad_top_add">Price:</label>
+    <label class="pad_top_add">Price</label>
     <input required type="text" name="price"><br><br>
     
-    <label class="pad_top_add">Category:</label>
+    <label class="pad_top_add">Category</label>
     <input required type="text" name="category"><br><br>
     
-    <label class="pad_top_add">Img Link:</label>
+    <label class="pad_top_add">Img Link</label>
     <input required type="text" name="img"><br><br>
     
     <label>&nbsp;</label><br>

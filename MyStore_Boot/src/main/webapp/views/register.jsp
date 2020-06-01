@@ -45,16 +45,20 @@
   	<span class="checkmark"></span>
 	</label>
     <label>&nbsp;</label><br>
-    <input required type="submit" value="Register" class="margin_left"><br>
-   
+    <input required type="submit" value="Create Account" class="margin_left_register">
+    <label>&nbsp;</label><br>
+    <p class="terms">By creating an account you agree to Bossco.com terms and conditions of use.</p>
+  
 </form>
-
+<hr class="line">
+	<p class="already">Already have an account?</p>
+	<form action="signin" method="get">
+	<input type="submit" value="Sign In" class="margin_left_signin">
+	<label>&nbsp;</label><br>
+	</form>
 </div>
-<br>
-<p>Already have an account?</p>
-<form action="signin" method="get">
-<input type="submit" value="Sign In" class="margin_left">
-</form>
+
+
 </div>
 
 
