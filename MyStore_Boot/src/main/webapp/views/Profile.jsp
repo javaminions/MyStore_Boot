@@ -51,7 +51,7 @@
 				</tr>
 			</table>
 			<div class="side-info-span">
-				<span>Edit info</span>
+				<span><a href="#">Edit info</a></span>
 			</div>
 		</div>
 			<div class="update-info">

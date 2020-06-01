@@ -16,7 +16,13 @@ label {
 	font-weight: bold;
 }
 
+#blah {
+	max-width: 180px;
+}
 
+input[type=file] {
+	padding-left: 27px;
+}
 
 br {
 	clear: both;
@@ -54,39 +60,38 @@ br {
 
 .margin_left_sign {
 	padding: 10px 70px;
-    border-radius: 2px;
-    color: #fff;
-    border: none;
-    background-color: #3071a9;
-    cursor: pointer;
-    width: 86%;
-    font-size: 16px;
-    font-weight: 700;
+	border-radius: 2px;
+	color: #fff;
+	border: none;
+	background-color: #3071a9;
+	cursor: pointer;
+	width: 86%;
+	font-size: 16px;
+	font-weight: 700;
 }
 
 .forgot {
 	font-size: 16px;
 	width: 86%;
-	
 }
 
 .line {
 	width: 86%;
 }
+
 .margin_left_register {
 	padding: 10px 70px;
-    border-radius: 2px;
-    color: #fff;
-    border: none;
-    background-color: #3071a9;
-    cursor: pointer;
-    width: 86%;
-    font-size: 16px;
-    font-weight: 700;
+	border-radius: 2px;
+	color: #fff;
+	border: none;
+	background-color: #3071a9;
+	cursor: pointer;
+	width: 86%;
+	font-size: 16px;
+	font-weight: 700;
 }
 
 .margin_left_signin {
-	
 	padding: 10px 70px;
 	border-radius: 2px;
 	color: #0060a9;
@@ -158,14 +163,13 @@ form input[type="text"]:valid, input[type="email"]:valid, input[type="password"]
 }
 
 .terms {
-	width:86%;
+	width: 86%;
 	text-align: left;
 	padding-left: 27px;
 }
 
 .already {
 	font-size: 16px;
-	
 }
 
 /* The container */
@@ -185,7 +189,6 @@ form input[type="text"]:valid, input[type="email"]:valid, input[type="password"]
 	user-select: none;
 	width: 85%;
 	text-align: left;
-	
 }
 
 /* Hide the browser's default checkbox */

@@ -40,7 +40,7 @@
   color: black;
 }
 .card-back {
-  background-color: rgb(33, 97, 17);
+  background-color: rgb(0, 115, 166);
   color: white;
   transform: rotateY(180deg);
 }

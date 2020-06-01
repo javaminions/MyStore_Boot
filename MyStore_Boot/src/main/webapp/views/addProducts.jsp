@@ -8,6 +8,7 @@
 <title>Register With Us</title>
 <link rel="stylesheet" href="styles/register.css" type="text/css"/>
  <script src="scripts/login.js" charset="utf-8"></script>
+ <script src="scripts/preview.js" charset="utf-8"></script>
 </head>
 <body>
 <%@ include file="/views/navbar.jsp" %>
@@ -36,8 +37,9 @@
     <label class="pad_top_add">Category</label>
     <input required type="text" name="category"><br><br>
     
-    <label class="pad_top_add">Img Link</label>
-    <input required type="text" name="img"><br><br>
+    <label class="pad_top_add">Img Link</label><br>
+    <input type='file' onchange="readURL(this);" />
+	<img id="blah" src="http://placehold.it/180" alt="your image" /><br>
     
     <label>&nbsp;</label><br>
     <input required type="submit" value="Add Product" class="margin_left_addproduct">
