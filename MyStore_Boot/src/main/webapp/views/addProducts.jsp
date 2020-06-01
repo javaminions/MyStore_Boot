@@ -40,7 +40,8 @@
     <input required type="text" name="img"><br><br>
     
     <label>&nbsp;</label><br>
-    <input required type="submit" value="Add Product" class="margin_left">
+    <input required type="submit" value="Add Product" class="margin_left_addproduct">
+     <label>&nbsp;</label><br>
 </form>
 </div>
 <br>

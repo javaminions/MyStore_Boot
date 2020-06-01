@@ -100,6 +100,17 @@ br {
 	font-weight: 700;
 }
 
+.margin_left_addproduct {
+	padding: 10px 70px;
+	border-radius: 2px;
+	color: #0060a9;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+	width: 86%;
+	font-weight: 700;
+}
+
 .align_left {
 	text-align: left;
 }

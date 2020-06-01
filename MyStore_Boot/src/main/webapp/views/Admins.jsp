@@ -10,15 +10,15 @@
 <%@ include file="/views/navbar.jsp" %>
 
 <div id="content">
-Hello, ${user.username}.<br>
+Hello, ${user.username}!<br>
 Please select what you would like to do below:
 <br><br>
 
-<a href="addproductpage"><button type="submit" name="button">Add a Product</button></a>
+<a href="addproductpage"><button type="submit" name="button" class="addpage_button">Add a Product</button></a>
 <br><br><br>
-<a href="fulfillment"><button type="submit" name="button">View Fufillments</button></a>
+<a href="fulfillment"><button type="submit" name="button" class="addpage_button">View Fufillments</button></a>
 <br><br><br>
-<a href="adminOrderHistory"><button type="submit" name="button">Order History</button></a>
+<a href="adminOrderHistory"><button type="submit" name="button" class="addpage_button">Order History</button></a>
 <br><br><br>
 </div>
 
