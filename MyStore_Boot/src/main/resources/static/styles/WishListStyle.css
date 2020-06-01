@@ -3,11 +3,9 @@
   display: flex;
   justify-content: center; 
   flex-wrap: wrap;
-  width: 95%; 
 }
 
 .wishBody{
-	margin-left: 12%;
 }
 .card {
   top: 0px; 
