@@ -3,6 +3,7 @@ package com.javaminions.model;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class CartHandler {
 	
@@ -33,7 +34,7 @@ public class CartHandler {
 			total += line.getProduct().getPrice()*line.getQuantity();
 		}
 		
-		return NumberFormat.getCurrencyInstance().format(total);
+		return NumberFormat.getCurrencyInstance(Locale.US).format(total);
 	}
 	public void removeLineItem(LineItem lineItem) {
 		int index=0;

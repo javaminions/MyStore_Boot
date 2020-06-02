@@ -36,7 +36,7 @@ public class LineItem {
 	public String getTotal() {
 		double total = 0;
 		total = product.getPrice()*quantity;
-		return NumberFormat.getCurrencyInstance().format(total);
+		return NumberFormat.getCurrencyInstance(Locale.US).format(total);
 	}
 	
 	
