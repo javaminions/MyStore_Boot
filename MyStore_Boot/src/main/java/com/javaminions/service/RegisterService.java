@@ -76,7 +76,7 @@ public void registerUser (HttpServletRequest request, HttpServletResponse respon
 
 		
 		session.setAttribute("signedin", "yes");
-		request.getRequestDispatcher("views/home.jsp").forward(request, response);
+		//request.getRequestDispatcher("views/home.jsp").forward(request, response);
 		
 	}
 	
