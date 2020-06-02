@@ -31,7 +31,7 @@
 							<span class="item-quantity-int">${item.quantity}</span>
 						</div>
 						<div class="item-price">${item.total}</div>
-						<a href="returnitem" class="return-item">Return Items</a>
+						<a href="returnitem" class="return-item">Return</a>
 						
 					</div>
 				</c:forEach>
